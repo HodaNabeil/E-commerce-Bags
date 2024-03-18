@@ -6,13 +6,14 @@
   --main-color:#DDC2AB;
   --second-color:#D39C80;
   --second-color-light:#DDC2AB;
-  --dark-colour:#353431;
+  --dark-color:#353431;
   --text-color:#667085;
   --text-2-color:#C5C4C3;
   --light-color:#f8f2EE;
   --color-active:#db794a;
   --transition: 0.4s all ease;
-  --color-light-2:#F1E6DD
+  --color-light-2:#F1E6DD;
+  --bg-dark-light:#a6abb573;
 }
 
 
@@ -21,8 +22,12 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -ms-box-sizing:border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
 
 
 
@@ -34,26 +39,112 @@ body {
 .font-2 {
   font-family: "Kaushan Script", cursive;
 }
+.main-btn {
+  position: relative;
+  transition: var(--transitions);
+  padding: 10px 25px;
+  width: 180px;
+  background-color: var(--second-color);
+  z-index: 1 !important;
+}
+.main-btn span {
+  z-index: 2 !important;
+  color: var(--light-color);
 
+}
+.main-btn::before ,.main-btn::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  transition: linear all 0.6s;
+  top: 0;
+  background-color: var(--color-active);
+}
+.main-btn::before {
+  left: 0;
+}
+.main-btn::after{
+  right: 0;
+}
+.main-btn:hover::before {
+  width: 50%;
+}
+.main-btn:hover::after {
+  width: 50%;
+}
+.padding-y-50 {
+  padding-top: 50px ;
+  padding-bottom: 50px;
+}
 @layer {
-  .container {
-    padding: 0 60px;
-    margin:  auto;
-  
+  .element-center-transform {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .center-flex {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+  }
+  .color-light {
+    color: var(--light-color) !important;
+  }
+  .text-dark {
+    color: var(--dark-color);
+    }
+    .color-dark-light {
+      color: var(--text-color);
+      }
+  .color-active {
+    color: var(--color-active);
+  }
+  .bg-light {
+    background-color: var(--light-color);
+  }
+  .element-center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bg-main-color {
+    background-color: var(--main-color);
+  }
+  .bg-dark-light {
+    background-color:var(--bg-dark-light);
+  }
+  .bg-light {
+    background-color:var(--light-color);
+  }
+  .bg-second-color {
+    background-color: var(--second-color);
   }
 }
 
-@media (max-width:576px) {
+/* Container  */
+.container {
+  padding-left:  60px !important;
+  padding-right: 60px !important;
+  margin:  auto !important;
+}
+@media (max-width:769px) {
   .container {
-    padding: 0 25px;
+    padding-left:  30px !important;
+    padding-right: 30px !important;
   }
   
 }
-
-
-
+@media (max-width:577px) {
+  .container {
+    padding-left:  25px !important;
+    padding-right: 25px !important;
+  }
+  
+}
 @media (max-width:300px) {
   .container {
-    padding: 0 20px;
+    padding-left:  20px !important;
+    padding-right: 20px !important;
   }
 }

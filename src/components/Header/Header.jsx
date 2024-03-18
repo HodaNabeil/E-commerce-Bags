@@ -1,27 +1,53 @@
 import { Link, NavLink } from "react-router-dom";
 
 import "./header.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 function Header() {
-
+const  headerRef= useRef()
    const [openNav,setOpenNav]=useState(false);
    const [activeLinke,setActiveLinke] =useState("Home");
 
 
-
-   useEffect(()=> {
-    const handleClikOutSide =(e)=> {
-      if(openNav) {
-        if(!e.target.closest(".nav-links") && !e.target.closest(".menu-icon") ){
-          setOpenNav(false)
+  //  useEffect(()=> {
+  //   window.addEventListener("scroll",()=>{
+  //     if(window.scrollY) {
+  //         headerRef.current.style.background='#D39C80';
+  //     }else{
+  //       headerRef.current.style.background ='transparent';
+  //     }
+  //   } )
+  // },[])
+  useEffect(() => {
+    const handleScroll = () => {
+        if (headerRef.current) { // Check if headerRef.current exists
+            if (window.scrollY) {
+                headerRef.current.style.background = '#D39C80';
+            } else {
+                headerRef.current.style.background = 'transparent';
+            }
         }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+        window.removeEventListener("scroll", handleScroll);
+    };
+}, []);
+
+useEffect(() => {
+  const handleClikOutSide = (e) => {
+      if (openNav && !e.target.closest(".nav-links") && !e.target.closest(".menu-icon")) {
+          setOpenNav(false);
       }
-    }
-    window.addEventListener("click",handleClikOutSide);
-    return ()=> {
-      window.removeEventListener("click",handleClikOutSide)
-    }
-   },[openNav])
+  };
+
+  window.addEventListener("click", handleClikOutSide);
+
+  return () => {
+      window.removeEventListener("click", handleClikOutSide);
+  };
+}, [openNav]);
   const Links = [
     { linkname: "Home", to: "/" },
     { linkname: "Shop", to: "/products" },
@@ -36,7 +62,7 @@ function Header() {
     setOpenNav(!openNav);
   }
   return (
-    <header className="header ">
+    <header ref={headerRef} className="header ">
       <Link to={"/"} className="logo font-2 ">
         Luxury Line
       </Link>
