@@ -5,6 +5,7 @@ import NewProducts from "../components/NewProducts"
 import OfferBags from "../components/OfferBags"
 import Why from "../components/Why"
 import Story from "../components/Story"
+import Footer from "../components/Footer"
 
 
 
@@ -22,6 +23,7 @@ function Home() {
         <OfferBags/>
         <Why />
         <Story/>
+        <Footer />
     </div>
   )
 }

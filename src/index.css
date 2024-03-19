@@ -100,6 +100,9 @@ body {
   .color-active {
     color: var(--color-active);
   }
+  .text-second-color {
+    color: var(--second-color);
+  }
   .bg-light {
     background-color: var(--light-color);
   }
@@ -119,6 +122,9 @@ body {
   }
   .bg-second-color {
     background-color: var(--second-color);
+  }
+  .bg-color-active {
+    background-color: var(--color-active);
   }
 }
 
