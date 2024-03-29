@@ -72,11 +72,11 @@
 .offer-products .box-imgs:first-child::after,
 .offer-products .box-imgs:nth-child(2)::after {
   right: 0;
-  border-color: transparent var(--color-active) transparent transparent;
+  border-color: transparent var(--active-color) transparent transparent;
 }
 .offer-products .box-imgs:last-child::after {
   left: 0;
-  border-color: transparent transparent transparent var(--color-active);
+  border-color: transparent transparent transparent var(--active-color);
 }
 .offer-products .box-imgs:first-child::after,
 .offer-products .box-imgs:last-child::after {
@@ -90,7 +90,7 @@
 .offer-products .box-imgs:last-child h4 {
   font-size: 18px;
   font-weight: bold;
-  color: var(--color-active);
+  color: var(--active-color);
   position: absolute;
   text-transform: uppercase;
 }

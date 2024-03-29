@@ -28,7 +28,7 @@
   color: var(--dark-colour);
 }
 .header .nav-links .nav-link:hover {
-  color: var(--color-active);
+  color: var(--active-color);
   transition: 0.4s all ease;
   -moz-transition: 0.4s all ease;
   -ms-transition: 0.4s all ease;
@@ -44,7 +44,7 @@
 }
 
 .header .nav-links .nav-link.active {
-  color: var(--color-active);
+  color: var(--active-color);
   font-weight: 600;
   transition: var(--transition);
   -moz-transition: var(--transition);
@@ -69,7 +69,7 @@
   border-radius: 50%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--color-active);
+  background-color: var(--active-color);
   opacity: 0;
 }
 .nav-links .nav-link::before {
@@ -80,7 +80,7 @@
   height: 7px;
   border-radius: 50%;
   left: -15px;
-  background-color: var(--color-active);
+  background-color: var(--active-color);
 }
 .header .icon-links {
   display: flex;
@@ -88,8 +88,8 @@
   align-items: center;
 }
 .header .icon-links > a {
-  color: var(--color-active);
-  border: 1px solid var(--color-active);
+  color: var(--active-color);
+  border: 1px solid var(--active-color);
   width: 40px;
   height: 40px;
   border-radius: 50%;

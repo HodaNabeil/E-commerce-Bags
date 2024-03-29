@@ -10,7 +10,7 @@ function OfferBags() {
           <h2
             className=" element-center-flex     sm:text-[19px] md:text-[22px] text-dark  font-medium mb-[30px]">
               life is better with you 
-              <span className=" ml-[5px] color-active font-bold  text-[17px] sm:text-[25px] md:text-[30px]">70% off</span>
+              <span className=" ml-[5px] active-color font-bold  text-[17px] sm:text-[25px] md:text-[30px]">70% off</span>
           </h2>
             <div  className=" flex flex-col gap-[20px]">
              <div className=" flex  flex-wrap   md:flex-nowrap gap-[10px] items-center justify-center  md:gap-x-[10px]">

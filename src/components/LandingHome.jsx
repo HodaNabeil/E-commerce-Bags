@@ -64,7 +64,7 @@ function LandingHome() {
       </div>
       <div className=" absolute element-center-transform">
           <h1 
-            className=" color-active text-center font-2 
+            className=" active-color text-center font-2 
             font-bold text-[35px] sm:text-[40px] 
             md:text-[50px] mb-[10px] tracking-[2px] ">
               {elmentsSlider[currentImg].title}   

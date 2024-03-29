@@ -8,7 +8,7 @@ function Footer() {
     <div className="   bg-light  padding-y-50">
       <div className="container   grid  grid-cols-1 sm:grid-cols-2 gap-[25px] md:gap-[10px] lg:gap-[30px]  md:grid-cols-4">
         <div>
-          <h4 className="  font-bold   md:text-[22px] lg:text-[25px] color-active  uppercase">
+          <h4 className="  font-bold   md:text-[22px] lg:text-[25px] active-color  uppercase">
             Luxury Line
           </h4>
           <div className="  w-[150px] sm:w-[200px] uppercase  text-dark font-medium mt-[20px] md:text-[18px] ">
@@ -117,7 +117,7 @@ function Footer() {
 
 
         <div className="">
-          <h4 className=" uppercase color-active  font-medium mb-[5px] w-[100%] ">
+          <h4 className=" uppercase active-color  font-medium mb-[5px] w-[100%] ">
             SUBSCRIBE TO OUR NEWSLETTER
           </h4>
           <div className=" relative  ">
@@ -128,7 +128,7 @@ function Footer() {
             />
             <div className="  absolute right-[0px]  top-[0px] ">
               <span
-                className=" element-center-flex  cursor-pointer  w-[40px] h-[40px] bg-color-active 
+                className=" element-center-flex  cursor-pointer  w-[40px] h-[40px] bg-active-color 
               color-light rounded-r-[50px]"
               >
                 <i

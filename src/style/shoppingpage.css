@@ -1,0 +1,145 @@
+.shopping-page .header .menu-icon span {
+  background-color: var(--light-color) !important;
+}
+
+.container-shopping-page {
+  padding-top: 100px;
+  display: flex;
+  column-gap: 20px;
+  background-color: var(--light-color);
+}
+
+.product-list {
+  width: 75%;
+}
+
+.products-sidebar {
+  width: 25%;
+}
+.add-cart .icon-cart {
+  transition: var(--transition);
+}
+.add-cart:hover .icon-cart {
+  transform: rotate(360deg);
+}
+.product-item:hover .add-cart {
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .products-sidebar {
+    width: 20%;
+  }
+}
+.product-item img {
+  filter: drop-shadow(6px 6px 2px rgb(0, 0, 0, 0.3));
+}
+
+.box-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #dd8b61;
+  z-index: 1;
+  transition: 0.3s;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.box-icon:hover::after {
+  width: 100%;
+}
+
+.product-item:hover .container-box-icon {
+  display: flex;
+}
+
+/* Sidebar */
+
+.filter-category .form-group {
+  display: flex;
+  align-items: center;
+}
+.filter-category .form-group  input {
+  position: relative;
+}
+.filter-category .form-group  input[type="radio" ] {
+  appearance: none;
+  --webkit-appearance: none;
+  display: none;
+
+}
+.filter-category .form-group  input[type="radio" ]:checked + label::after {
+  transform: scale(1);
+}
+.filter-category .form-group label {
+  padding-left: 25px;
+  position: relative;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: var(--dark-color);
+}
+.filter-category .form-group label::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid  var(--active-color);
+  left: 0px;
+  border-radius: 4px;
+  top: 2px;
+
+}
+
+.filter-category .form-group label::after {
+  content: "\f00c";
+  font-weight: 900;
+  font-family: "Font Awesome 6 Free";
+  position: absolute;
+  font-size: 12px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--active-color);
+  height: 16px;
+  width: 16px;
+  border-radius: 4px;
+  color: #fff;
+  top: 2px;
+  transform: scale(0) rotate(360deg);
+  transition: 0.3s ease;
+  --webkit-transition: 0.3s ease;
+  --ms-transition: 0.3s ease;
+  --o-transition: 0.3s ease;
+  --moz-transition: 0.3s ease;
+
+}
+
+/* Filter Color */
+
+
+.btn-color  {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.btn-color:first-of-type {
+  background-color: white;
+}
+.btn-color:last-of-type {
+  background-color: #dd8b61;
+}
+.btn-color:nth-of-type(2) {
+  background-color: black;
+}

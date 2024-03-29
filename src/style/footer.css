@@ -15,7 +15,7 @@
 }
 .container-icons span:hover::after {
   width: 100%;
-  background-color: var(--color-active);
+  background-color: var(--active-color);
 }
 .container-icons span:hover i {
   color: var(--light-color) !important;

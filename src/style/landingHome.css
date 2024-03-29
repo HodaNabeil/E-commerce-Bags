@@ -52,9 +52,9 @@ align-items: center;
 }
 
 .container-balls > div.active {
-  background-color: var(--color-active);
+  background-color: var(--active-color);
   width: 30px;
   border-radius: 8px;
-  border-color: var(--color-active);
+  border-color: var(--active-color);
   transition: 0.3s;
 }

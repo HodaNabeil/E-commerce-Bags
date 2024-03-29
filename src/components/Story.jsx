@@ -26,7 +26,7 @@ function Story() {
         </div>
 
         <div className=" story   w-[100%] md:w-[35%] mt-[250px] md:mt-0 ">
-          <h3 className=" element-center-flex font-bold  color-active text-[25px] md:text-[30px]">Our Story </h3>
+          <h3 className=" element-center-flex font-bold  active-color text-[25px] md:text-[30px]">Our Story </h3>
           <p className=" text-dark  leading-[1.6]  tracking-[1px]">
   
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
