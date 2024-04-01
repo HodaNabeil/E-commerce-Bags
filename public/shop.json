@@ -4,12 +4,12 @@
     "title": "hand bag",
     "category": "handbag",
     "image": [
-      "/Img/collection_1.png",
-      "/Img/collection_1.png",
-      "/Img/collection_1.png",
-      "/Img/collection_1.png"
+      "/Img/Handbag_withe.jpg",
+      "/Img/Handbag_withe.jpg",
+      "/Img/Handbag_withe.jpg",
+      "/Img/Handbag_withe.jpg"
     ],
-    "color": ["black", "white"],
+    "color":"white",  
     "prand": ["cuyana", "fendi"],
     "sizes": [
       { "size": "small", "price": "10" },
@@ -22,14 +22,14 @@
   {
     "id": 2,
     "title": "hand bag",
-    "category": "dufflebag",
+    "category": "handbag",
     "image": [
-      "/Img/offer_4.png",
-      "/Img/offer_4.png",
-      "/Img/offer_4.png",
-      "/Img/offer_4.png"
+      "/Img/hangbagewhite_2.jpg",
+      "/Img/hangbagewhite_2.jpg",
+      "/Img/hangbagewhite_2.jpg",
+      "/Img/hangbagewhite_2.jpg"
     ],
-    "color": ["white"],
+    "color": "white",
     "prand": ["adidas", "cuyana", "fendi"],
     "sizes": [
       { "size": "small", "price": "100" },
@@ -44,12 +44,12 @@
     "title": "backbag",
     "category": "backbag",
     "image": [
-      "/Img/offer_2.png",
-      "/Img/offer_2.png",
-      "/Img/offer_2.png",
-      "/Img/offer_2.png"
+      "/Img/wihte_2backbag.jpg",
+      "/Img/wihte_2backbag.jpg",
+      "/Img/wihte_2backbag.jpg",
+      "/Img/wihte_2backbag.jpg"
     ],
-    "color": ["white"],
+    "color": "white",
     "prand": ["adidas", "cuyana", "fendi"],
     "sizes": [
       { "size": "small", "price": "50" },
@@ -69,7 +69,7 @@
       "/Img/dufflebag_4.png",
       "/Img/dufflebag_4.png"
     ],
-    "color": ["black"],
+    "color": "black",
     "prand": ["adidas", "cuyana", "fendi"],
     "sizes": [
       { "size": "small", "price": "190" },
@@ -89,7 +89,7 @@
       "/Img/new-lab.png",
       "/Img/new-lab.png"
     ],
-    "color": ["black", "Beige"],
+    "color":  "Beige",
     "prand": ["adidas", "cuyana", "fendi"],
     "sizes": [
       { "size": "small", "price": "10" },
@@ -107,7 +107,7 @@
       "/Img/backbag_6.png",
       "/Img/backbag_6.png"
     ],
-    "color": ["black", "Beige"],
+    "color": "Beige",
     "prand": ["adidas", "cuyana", "fendi"],
     "sizes": [
       { "size": "small", "price": "40" },
@@ -127,7 +127,7 @@
       "/Img/hanbag_7.png",
       "/Img/hanbag_7.png"
     ],
-    "color": ["black"],
+    "color": "black",
     "prand": ["adidas", "cuyana", "fendi"],
     "sizes": [
       { "size": "small", "price": "100" },
@@ -147,7 +147,7 @@
       "/Img/duffle_8.png",
       "/Img/duffle_8.png"
     ],
-    "color": ["Beige", "white"],
+    "color": "Beige",
     "prand": ["adidas", "fendi"],
     "sizes": [
       { "size": "small", "price": "250" },
@@ -167,7 +167,7 @@
       "/Img/new-products-1.png",
       "/Img/new-products-1.png"
     ],
-    "color": ["black", "Beige", "white"],
+    "color": "Beige",
     "prand": ["adidas", "cuyana", "fendi"],
     "sizes": [
       { "size": "small", "price": "300" },
@@ -187,7 +187,7 @@
       "/Img/labtop_10.png",
       "/Img/labtop_10.png"
     ],
-    "color": ["Beige", "white"],
+    "color": "Beige",
     "prand": ["adidas", "cuyana"],
     "sizes": [
       { "size": "small", "price": "420" },
@@ -207,8 +207,8 @@
       "/Img/new-lab.png",
       "/Img/new-lab.png"
     ],
-    "color": ["black", "Beige"],
-    "prand": ["fendi"],
+    "color": "Beige",
+    "prand": "fendi",
     "sizes": [
       { "size": "small", "price": "100" },
       { "size": "medium", "price": "258" },
@@ -228,7 +228,7 @@
       "/Img/dufflebag12.png",
       "/Img/dufflebag12.png"
     ],
-    "color": ["black", "Beige"],
+    "color": "black",
     "prand": ["cuyana", "fendi"],
     "sizes": [
       { "size": "small", "price": "400" },
@@ -249,7 +249,7 @@
       "/Img/collection_1.png",
       "/Img/collection_1.png"
     ],
-    "color": ["white"],
+    "color": "white",
     "prand": ["cuyana", "fendi"],
     "sizes": [
       { "size": "small", "price": "10" },
@@ -269,7 +269,7 @@
       "/Img/offer_4.png",
       "/Img/offer_4.png"
     ],
-    "color": ["white"],
+    "color": "white",
     "prand": ["adidas"],
     "sizes": [
       { "size": "small", "price": "100" },
@@ -289,7 +289,7 @@
       "/Img/offer_2.png",
       "/Img/offer_2.png"
     ],
-    "color": ["white"],
+    "color": "white",
     "prand": ["fendi"],
     "sizes": [
       { "size": "small", "price": "50" },
@@ -309,7 +309,7 @@
       "/Img/dufflebag12.png",
       "/Img/dufflebag12.png"
     ],
-    "color": ["black"],
+    "color":"black",
     "prand": ["adidas", "fendi"],
     "sizes": [
       { "size": "small", "price": "190" },
@@ -329,8 +329,8 @@
       "/Img/new-lab.png",
       "/Img/new-lab.png"
     ],
-    "color": ["black"],
-    "prand": ["adidas", "cuyana", "fendi"],
+    "color": "black",
+    "prand": "cuyana",
     "sizes": [
       { "size": "small", "price": "10" },
       { "size": "medium", "price": "25" },
@@ -347,8 +347,8 @@
       "/Img/backbag_6.png",
       "/Img/backbag_6.png"
     ],
-    "color": ["black", "Beige"],
-    "prand": ["adidas", "cuyana", "fendi"],
+    "color": "black",
+    "prand": "fendi",
     "sizes": [
       { "size": "small", "price": "40" },
       { "size": "medium", "price": "85" },
@@ -367,7 +367,7 @@
       "/Img/hanbag_7.png",
       "/Img/hanbag_7.png"
     ],
-    "color": ["black"],
+    "color": "black",
     "prand": ["fendi"],
     "sizes": [
       { "size": "small", "price": "100" },
@@ -387,7 +387,7 @@
       "/Img/duffle_8.png",
       "/Img/duffle_8.png"
     ],
-    "color": ["Beige", "white"],
+    "color": "Beige",
     "prand": ["adidas", "fendi"],
     "sizes": [
       { "size": "small", "price": "250" },
@@ -407,8 +407,8 @@
       "/Img/new-products-1.png",
       "/Img/new-products-1.png"
     ],
-    "color": ["black"],
-    "prand": ["adidas", "cuyana", "fendi"],
+    "color": "black",
+    "prand":"adidas",
     "sizes": [
       { "size": "small", "price": "300" },
       { "size": "medium", "price": "365" },
@@ -422,13 +422,13 @@
     "title": "dufflebag",
     "category": "dufflebag",
     "image": [
-      "/Img/dufflebag_12.png",
-      "/Img/dufflebag_12.png",
-      "/Img/dufflebag_12.png",
-      "/Img/dufflebag_12.png"
+      "/Img/duffle_8.png",
+      "/Img/duffle_8.png",
+      "/Img/duffle_8.png",
+      "/Img/duffle_8.png"
     ],
-    "color": ["black", "Beige"],
-    "prand": ["cuyana", "fendi"],
+    "color": "black",
+    "prand": "fendi",
     "sizes": [
       { "size": "small", "price": "400" },
       { "size": "medium", "price": "455" },

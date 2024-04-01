@@ -12,39 +12,45 @@ function Shop() {
 
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [category, setCategory] = useState("all");
+  const [color, setColor] = useState("");
 
-
-  const [color,setcolor] =useState("")
-
-  
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
   useEffect(() => {
-    if (category === "all") {
-      setFilteredProducts(products);
-    } else {
-      setFilteredProducts(products.filter((product) => product.category === category));
-    }
-    if(color === "black") {
+    let updatedProducts = products;
 
-      setFilteredProducts(products.filter((product)=>product.color === color))
+    if (category !== "all") {
+      updatedProducts = updatedProducts.filter(
+        (product) => product.category === category
+      );
     }
-  }, [category, products ,color]) ;
+
+    if (color !== "") {
+      updatedProducts = updatedProducts.filter(
+        (product) => product.color === color
+      );
+    }
+
+    setFilteredProducts(updatedProducts);
+  }, [category, color, products]);
 
   const handleCategoryChange = (newCategory) => {
     setCategory(newCategory);
   };
 
-
-  console.log(filteredProducts)
   return (
     <div className="shopping-page">
       <Header />
       <div className="bg-light">
         <div className="container container-shopping-page">
-          <ProductSidebar  filteredProducts={filteredProducts}  setcolor={setcolor}   setCategory={setCategory} />
+          <ProductSidebar
+            filteredProducts={filteredProducts}
+            setColor={setColor}
+            setCategory={setCategory}
+            color={color}
+          />
           <ProductList products={filteredProducts} />
         </div>
       </div>

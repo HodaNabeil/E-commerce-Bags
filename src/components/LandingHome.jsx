@@ -70,7 +70,7 @@ function LandingHome() {
               {elmentsSlider[currentImg].title}   
           </h1>
           <p 
-            className=" text-light  text-[20px] md:text-[25px]  text-center">
+            className=" color-light  text-[20px] md:text-[25px]  text-center">
               {elmentsSlider[currentImg].des}
           </p>
         </div>
