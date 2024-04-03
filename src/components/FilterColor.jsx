@@ -1,23 +1,25 @@
-import React from "react";
+
 import "../style/shoppingpage.css";
 
 function FilterColor({ setColor, color }) {
-
-  const handleChangeColor = (selectedColor) => {
-    setColor(selectedColor);
-  };
-
-  const colors = ["white", "black", "beige"];
+  function handleChangeColor(color) {
+    setColor(color);
+  }
 
   return (
-    <div className="filter-color flex gap-x-[10px]">
-      {colors.map((col) => (
-        <div
-          key={col}
-          onClick={() => handleChangeColor(col)}
-          className={`btn-color ${col} ${color === col && "active"}`}
-        ></div>
-      ))}
+    <div className=" filter-color   flex  gap-x-[10px] ">
+      <div
+        onClick={() => handleChangeColor("white")}
+        className={`btn-color  white ${color === "white" && "active"} `}
+      ></div>
+      <div
+        onClick={() => handleChangeColor("black")}
+        className={`btn-color black ${color === "black" && "active"}`}
+      ></div>
+      <div
+        onClick={() => handleChangeColor("Beige")}
+        className={`btn-color Beige ${color === "Beige" && "active"}`}
+      ></div>
     </div>
   );
 }

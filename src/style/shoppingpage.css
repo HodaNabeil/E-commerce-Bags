@@ -155,7 +155,6 @@
   border-color: var(--active-color);
 }
 
-
 .btn-color:first-of-type:hover,
 .btn-color:nth-of-type(2):hover {
   border-color: var(--active-color);

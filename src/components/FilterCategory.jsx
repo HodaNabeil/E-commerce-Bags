@@ -1,6 +1,10 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 function FilterCategory({ setCategory}) {
+
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.products.products);
   const onChangeCategory = (e) => {
     setCategory(e.target.id);
   };
@@ -15,7 +19,7 @@ function FilterCategory({ setCategory}) {
       
           onChange={onChangeCategory}
         />
-        <label htmlFor="all">all</label>
+        <label htmlFor="all">all   <span>{products.length}</span></label>
       </div>
 
       <div className="form-group">

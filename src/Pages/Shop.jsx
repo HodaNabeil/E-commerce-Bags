@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import Header from "../components/Header/Header";
 import ProductList from "../components/ProductList";
 import ProductSidebar from "../components/ProductSidebar";
@@ -8,17 +8,22 @@ import "../style/shoppingpage.css";
 
 function Shop() {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products.products);
+  const { products, loading, error } = useSelector((state) => state.products);
 
-  const [filteredProducts, setFilteredProducts] = useState(products);
   const [category, setCategory] = useState("all");
   const [color, setColor] = useState("");
+  const [size, setSize] = useState("");
+  const[prand,setPrand]=useState("");
+
+  const[minPrice, setMinPrice]=useState(0)
+
+  const[maxPrice, setMaxPrice]=useState(500)
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  useEffect(() => {
+  const filteredProducts = useMemo(() => {
     let updatedProducts = products;
 
     if (category !== "all") {
@@ -28,17 +33,48 @@ function Shop() {
     }
 
     if (color !== "") {
-      updatedProducts = updatedProducts.filter(
-        (product) => product.color === color
-      );
+      updatedProducts = updatedProducts.filter((product) => {
+        if (Array.isArray(product.colors)) {
+          return product.colors.some((item) => item === color);
+        }
+        return false;
+      });
+    }
+    if (size !== "") {
+      updatedProducts = updatedProducts.filter((product) => {
+        return product.sizes.some((item) => item.size === size);
+      });
     }
 
-    setFilteredProducts(updatedProducts);
-  }, [category, color, products]);
+    if (prand !== "") {
+      updatedProducts = updatedProducts.filter((product) => {
+        if (Array.isArray(product.prand)) {
+          return product.prand.some((item) => item === prand);
+        }
+        return false;
+      });
+    }
 
-  const handleCategoryChange = (newCategory) => {
-    setCategory(newCategory);
-  };
+    if (minPrice !== 0 || maxPrice <= 500) {
+      updatedProducts = updatedProducts.filter((product) => {
+        const prices = product.sizes.map((item) => parseFloat(item.price));
+        const minProductPrice = Math.min(...prices);
+        const maxProductPrice = Math.max(...prices);
+        return minProductPrice >= minPrice && maxProductPrice <= maxPrice;
+      });
+    }
+    
+     
+    return updatedProducts;
+  }, [category, color, products, size ,prand ,minPrice ,maxPrice ]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="shopping-page">
@@ -50,6 +86,15 @@ function Shop() {
             setColor={setColor}
             setCategory={setCategory}
             color={color}
+            size={size}
+            setSize={setSize}
+            prand={prand}
+            setPrand={setPrand}
+            minPrice={minPrice}
+            maxPrice={maxPrice}
+            setMaxPrice={setMaxPrice}
+            setMinPrice={setMinPrice}
+        
           />
           <ProductList products={filteredProducts} />
         </div>
