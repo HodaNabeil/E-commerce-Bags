@@ -16,6 +16,7 @@
 .products-sidebar {
   width: 25%;
 }
+
 .add-cart .icon-cart {
   transition: var(--transition);
 }
@@ -28,7 +29,15 @@
 
 @media (max-width: 768px) {
   .products-sidebar {
-    width: 20%;
+    width: 35%;
+  }
+  .product-list {
+    width: 65%;
+  }
+}
+
+@media (max-width: 576px) {
+  .products-sidebar {
   }
 }
 .product-item img {
@@ -161,4 +170,90 @@
 }
 .btn-color:last-of-type:hover {
   border-color: var(--light-color);
+}
+
+/* Filter Price */
+.slider-price {
+  background-color: #c6b9b1;
+  border-radius: 10px;
+  width: 100%;
+  height: 3px;
+}
+
+.slider-price .thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--light-color);
+  border: 2px solid var(--active-color);
+  cursor: pointer;
+  outline: none;
+  margin-top: -5px;
+  transition: 0.2s ease transform;
+}
+
+.slider-price .thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Commponent Sort Filter */
+.select-menu {
+  width: 320px;
+}
+.select-btn {
+  display: flex;
+  height: 50px;
+  background-color: var(--light-color);
+  padding: 20px;
+  font-size: 18px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  color: var(--dark-color);
+  text-transform: capitalize;
+}
+
+.select-btn i {
+  transition: var(--transition);
+}
+.select-btn i:hover {
+  color: var(--active-color);
+}
+.options {
+  margin-top: 10px;
+  padding: 20px;
+  background-color: var(--light-color);
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  z-index: 1;
+}
+
+.options li {
+  transition: var(--transition);
+  height: 40px;
+  cursor: pointer;
+  margin-bottom: 4px;
+  padding: 0 15px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark-color);
+  text-transform: capitalize;
+}
+.options li:hover {
+  background-color: #d39c80;
+  color: var(--light-color);
+}
+
+@media (max-width: 768px) {
+  .options,
+  .select-btn {
+    padding: 10px  !important;
+  }
 }

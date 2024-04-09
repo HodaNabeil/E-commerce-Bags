@@ -1,22 +1,38 @@
-function FilterPrice({ minPrice, setMinPrice, setMaxPrice, maxPrice }) {
-  function handleChangePrice(e) {
-    const value = e.target.value;
-    setMinPrice(value);
-  }
+import { useState } from "react";
+import Slider from "react-slider";
 
-  console.log(minPrice)
+function FilterPrice({ minPrice, setMinPrice, setMaxPrice, maxPrice }) {
+  const MIN = 0;
+  const MAX = 500;
+  const [values, setValues] = useState([MIN, MAX]);
+
+  const handleChange = (newValues) => {
+    setValues(newValues);
+    setMinPrice(newValues[0]);
+    setMaxPrice(newValues[1]);
+  };
+
   return (
-    <div className="form-group">
-      <input
-        type="range"
-        name="filter-price"
-        id="price"
-        min={0} 
-        max={maxPrice} 
-        value={minPrice}
-        onChange={handleChangePrice}
+    <div style={{ position: "relative" }}>
+      <div
+        style={{
+          position: "absolute",
+          left:`${((values[0] - MIN) / (MAX - MIN)) * 100}%`,
+          width: `${((values[1] - values[0] ) / (MAX - MIN)) * 100}%`,
+          height: "3px",
+          backgroundColor: "#db794a",
+          zIndex: 1,
+          opacity: 0.5,
+        }}
+      ></div>
+      <Slider
+        className="slider-price"
+        value={values}
+        min={MIN}
+        max={MAX}
+        onChange={handleChange}
       />
-      <label className="block pt-[10px]" htmlFor="price">Min Price</label>
+      <small className="mt-[12px] block text-dark" >  Range: {values[0]} - {values[1]}</small>
     </div>
   );
 }

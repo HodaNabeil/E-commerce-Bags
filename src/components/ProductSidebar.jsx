@@ -20,9 +20,10 @@ function ProductSidebar({
   setMinPrice,
   minPrice,
   maxPrice,
+
 }) {
   return (
-    <div className="products-sidebar bg-[#ddc2ab52] p-[10px] ">
+    <div className="products-sidebar h-[95vh] bg-[#ddc2ab52] p-[10px] ">
       <div>
         <h3 className="mb-[10px] ml-[10px] text-dark">Filter</h3>
         <FilterCategory
@@ -31,8 +32,8 @@ function ProductSidebar({
           filteredProducts={filteredProducts}
         />
       </div>
-      <div>
-        <h3 className="mb-[10px] ml-[10px] text-dark">Price</h3>
+      <div className="my-[15px]">
+        <h3 className="mb-[10px]  ml-[10px] text-dark">Price</h3>
         <FilterPrice
           setMinPrice={setMinPrice}
           setMaxPrice={setMaxPrice}
@@ -41,15 +42,15 @@ function ProductSidebar({
         />
       </div>
 
-      <div>
+      <div className="my-[15px]">
         <h3 className=" text-dark p[10px] my-[10px]">Colors</h3>
         <FilterColor setColor={setColor} color={color} />
       </div>
-      <div>
+      <div className="my-[15px]">
         <h3 className=" text-dark p[10px] my-[10px]">Sizes</h3>
         <FilterSize size={size} setSize={setSize} />
       </div>
-      <div>
+      <div className="my-[15px]">
         <h3 className=" text-dark p[10px] my-[10px]">Prand</h3>
         <FilterPrand prand={prand} setPrand={setPrand} />
       </div>

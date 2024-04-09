@@ -5,6 +5,8 @@ import ProductSidebar from "../components/ProductSidebar";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../Store/ProductSlice/productsSlice";
 import "../style/shoppingpage.css";
+import { Outlet } from "react-router-dom";
+import SortFilter from "../components/SortFilter";
 
 function Shop() {
   const dispatch = useDispatch();
@@ -13,11 +15,12 @@ function Shop() {
   const [category, setCategory] = useState("all");
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
-  const[prand,setPrand]=useState("");
+  const [prand, setPrand] = useState("");
+  const [sortItem, setSortItem] = useState("");
 
-  const[minPrice, setMinPrice]=useState(0)
+  const [minPrice, setMinPrice] = useState(0);
 
-  const[maxPrice, setMaxPrice]=useState(500)
+  const [maxPrice, setMaxPrice] = useState(500);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -63,10 +66,18 @@ function Shop() {
         return minProductPrice >= minPrice && maxProductPrice <= maxPrice;
       });
     }
-    
-     
+
+    if (sortItem === "low") {
+      updatedProducts.sort((a, b) =>
+        parseFloat(a.sizes[0].price) - parseFloat(b.sizes[0].price)
+      );
+    } else if (sortItem === "high") {
+      updatedProducts.sort((a, b) =>
+        parseFloat(b.sizes[0].price) - parseFloat(a.sizes[0].price)
+      );
+    }
     return updatedProducts;
-  }, [category, color, products, size ,prand ,minPrice ,maxPrice ]);
+  }, [category, color, products, size, prand, minPrice, maxPrice, sortItem]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -79,7 +90,12 @@ function Shop() {
   return (
     <div className="shopping-page">
       <Header />
+
       <div className="bg-light">
+        <div className="bg-[#f0e2d9] top-[74px] relative">
+          <SortFilter sortItem={sortItem} setSortItem={setSortItem} />
+        </div>
+
         <div className="container container-shopping-page">
           <ProductSidebar
             filteredProducts={filteredProducts}
@@ -94,7 +110,6 @@ function Shop() {
             maxPrice={maxPrice}
             setMaxPrice={setMaxPrice}
             setMinPrice={setMinPrice}
-        
           />
           <ProductList products={filteredProducts} />
         </div>
