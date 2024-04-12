@@ -24,7 +24,7 @@ function FilterCategory({ setCategory }) {
           onChange={onChangeCategory}
         />
         <label htmlFor="all" className="flex justify-between items-center">
-          <span>all</span>
+          <span className="text-[15px] md:text-[16px]" >all</span>
           <span>{products.length}</span>
         </label>
       </div>
@@ -36,7 +36,7 @@ function FilterCategory({ setCategory }) {
           id="handbag"
           onChange={onChangeCategory}
         />
-        <label htmlFor="handbag"  className="flex justify-between items-center">
+        <label htmlFor="handbag"  className="flex justify-between items-center text-[15px] md:text-[16px]">
           handbag <span>{getItemCountForCategory("handbag")}</span>
         </label>
       </div>
@@ -48,7 +48,7 @@ function FilterCategory({ setCategory }) {
           id="dufflebag"
           onChange={onChangeCategory}
         />
-        <label htmlFor="dufflebag"  className="flex justify-between items-center">
+        <label htmlFor="dufflebag"  className="flex justify-between items-center text-[15px] md:text-[16px]">
           dufflebag <span>{getItemCountForCategory("dufflebag")}</span>{" "}
         </label>
       </div>
@@ -60,7 +60,7 @@ function FilterCategory({ setCategory }) {
           id="backbag"
           onChange={onChangeCategory}
         />
-        <label htmlFor="backbag"  className="flex justify-between items-center">
+        <label htmlFor="backbag"  className="flex justify-between items-center text-[15px] md:text-[16px]">
           backbag <span>{getItemCountForCategory("backbag")}</span>{" "}
         </label>
       </div>
@@ -72,7 +72,7 @@ function FilterCategory({ setCategory }) {
           id="laptop"
           onChange={onChangeCategory}
         />
-        <label htmlFor="laptop"  className="flex justify-between items-center">
+        <label htmlFor="laptop"  className="flex justify-between items-center text-[15px] md:text-[16px]">
           laptop <span>{getItemCountForCategory("laptop")}</span>{" "}
         </label>
       </div>

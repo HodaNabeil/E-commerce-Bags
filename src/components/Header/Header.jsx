@@ -2,52 +2,44 @@ import { Link, NavLink } from "react-router-dom";
 
 import "./header.css";
 import { useEffect, useRef, useState } from "react";
-function Header() {
-const  headerRef= useRef()
-   const [openNav,setOpenNav]=useState(false);
-   const [activeLinke,setActiveLinke] =useState("Home");
+function Header({ schangebackground }) {
+  const headerRef = useRef();
+  const [openNav, setOpenNav] = useState(false);
+  const [activeLinke, setActiveLinke] = useState("Home");
 
-
-  //  useEffect(()=> {
-  //   window.addEventListener("scroll",()=>{
-  //     if(window.scrollY) {
-  //         headerRef.current.style.background='#D39C80';
-  //     }else{
-  //       headerRef.current.style.background ='transparent';
-  //     }
-  //   } )
-  // },[])
   useEffect(() => {
     const handleScroll = () => {
-        if (headerRef.current) { // Check if headerRef.current exists
-            if (window.scrollY) {
-                headerRef.current.style.background = '#D39C80';
-            } else {
-                headerRef.current.style.background = '#ddc2ab';
-            }
-        }
+      if (headerRef.current) {
+        headerRef.current.style.background = window.scrollY
+          ? "#D39C80"
+          : schangebackground;
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-        window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-}, []);
+  }, [schangebackground]);
 
-useEffect(() => {
-  const handleClikOutSide = (e) => {
-      if (openNav && !e.target.closest(".nav-links") && !e.target.closest(".menu-icon")) {
-          setOpenNav(false);
+  useEffect(() => {
+    const handleClikOutSide = (e) => {
+      if (
+        openNav &&
+        !e.target.closest(".nav-links") &&
+        !e.target.closest(".menu-icon")
+      ) {
+        setOpenNav(false);
       }
-  };
+    };
 
-  window.addEventListener("click", handleClikOutSide);
+    window.addEventListener("click", handleClikOutSide);
 
-  return () => {
+    return () => {
       window.removeEventListener("click", handleClikOutSide);
-  };
-}, [openNav]);
+    };
+  }, [openNav]);
   const Links = [
     { linkname: "Home", to: "/" },
     { linkname: "Shop", to: "/products" },
@@ -55,10 +47,10 @@ useEffect(() => {
     { linkname: "Contact", to: "/contact" },
   ];
 
-  function handleactiveLinke(link) {
-    setActiveLinke(link)
+  function handleActiveLinke(link) {
+    setActiveLinke(link);
   }
-  function Toggle() {
+  function toggleNav() {
     setOpenNav(!openNav);
   }
   return (
@@ -67,18 +59,17 @@ useEffect(() => {
         Luxury Line
       </Link>
       <nav>
-        <ul className={`nav-links ${openNav === true? "show" :""}`}>
+        <ul className={`nav-links ${openNav === true ? "show" : ""}`}>
           {Links.map((link, index) => {
             return (
-              <li 
-              
-              key={index} >
-                <NavLink 
-                  onClick={()=> {
-                    handleactiveLinke(link.linkname)
+              <li key={index}>
+                <NavLink
+                  onClick={() => {
+                    handleActiveLinke(link.linkname);
                   }}
-                 to={link.to} 
-                 className={`nav-link ${openNav ===true ? "show" :""}`}>
+                  to={link.to}
+                  className={`nav-link ${openNav ? "show" : ""}`}
+                >
                   {link.linkname}
                 </NavLink>
               </li>
@@ -102,12 +93,14 @@ useEffect(() => {
             <span className="icon-number">0</span>
           </div>
         </Link>
-        <div
-        onClick={Toggle}
-        className=" menu-icon">
-          <span  className={`   ${ openNav=== true ? "active-menu" : ""}`}></span>
-          <span  className={`   ${ openNav=== true ? "active-menu" : ""}`}></span>
-          <span  className={`   ${ openNav=== true ? "active-menu" : ""}`}></span>
+
+        <div onClick={toggleNav} className="menu-icon">
+          {[1, 2, 3].map((_, index) => (
+            <span
+              key={index}
+              className={`menu-bar ${openNav ? "active-menu" : ""}`}
+            ></span>
+          ))}
         </div>
       </div>
     </header>

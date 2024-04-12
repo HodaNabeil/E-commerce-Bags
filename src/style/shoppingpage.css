@@ -344,13 +344,51 @@
     left: 50%;
     transform: translate(-50% ,-50%);
     z-index: 600;
-display: none;
+    display: none;
   }
-  .products-sidebar.show {
-  display: block;
+  .products-sidebar.show{
+    display: block;
+
   }
-  
   .container-shopping-page  {
     justify-content: center;
   }
+}
+
+
+@media (max-width:300px) {
+  .product-item  img {
+    width: 80px;
+    height:80px;
+  }
+  .product-item  h4  ,  .product-item  span{
+    font-size: 12px !important;
+  }
+  .add-cart   {
+    display: none;
+  }
+  .container-box-icon {
+    top: 50% !important;
+    right: 3px !important;
+  }
+  .pagination {
+    gap: 10px;
+  }
+ .pagination .btn{
+
+    position: relative;
+  }
+
+ .pagination .btn.previous::after{
+    position:relative;
+    content: "\f054";
+    width: 30px;
+    height: 30px;
+    background-color: var(--active-color);
+    font-weight: 900;
+    font-family: "Font Awesome 6 Free";
+  }
+
+
+
 }

@@ -2,7 +2,7 @@ import CardItem from "./CardItem";
 
 function ProductList({ products ,mobileFilterItem }) {
 
-  console.log(mobileFilterItem)
+
   return (
     <div className={`product-list  grid  grid-cols-2  md:grid-cols-3     gap-[20px] 
      ${mobileFilterItem === false ? " " : " show "}`}>

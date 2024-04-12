@@ -20,7 +20,7 @@ function FilterPrand({setPrand}) {
 
           onChange={onChangePrand}
         />
-        <label htmlFor="cuyana">cuyana</label>
+        <label htmlFor="cuyana" className="text-[15px] md:text-[16px]">cuyana</label>
       </div>
       
 
@@ -31,7 +31,7 @@ function FilterPrand({setPrand}) {
           id="fendi"
           onChange={onChangePrand}
         />
-        <label htmlFor="fendi">fendi</label>
+        <label htmlFor="fendi" className="text-[15px] md:text-[16px]">fendi</label>
       </div>
 
       <div className="form-group">
@@ -41,7 +41,7 @@ function FilterPrand({setPrand}) {
           id="adidas"
           onChange={onChangePrand}
         />
-        <label htmlFor="adidas">adidas</label>
+        <label htmlFor="adidas" className="text-[15px] md:text-[16px]">adidas</label>
       </div>
     </div>
   );

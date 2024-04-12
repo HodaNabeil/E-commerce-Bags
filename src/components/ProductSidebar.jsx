@@ -20,12 +20,16 @@ function ProductSidebar({
   setMinPrice,
   minPrice,
   maxPrice,
-
+  mobileFilterItem,
 }) {
   return (
-    <div className={`products-sidebar h-[95vh] bg-[#ddc2ab52] p-[10px] `}>
+    <div
+      className={`products-sidebar h-[95vh] bg-[#ddc2ab52] p-[10px] 
+    
+    ${mobileFilterItem === false ? " " : "show"} `}
+    >
       <div>
-        <h3 className="mb-[10px] ml-[10px] text-dark">Filter</h3>
+        <h3 className=" mb-[10px] ml-[10px] text-dark">Filter</h3>
         <FilterCategory
           category={category}
           setCategory={setCategory}

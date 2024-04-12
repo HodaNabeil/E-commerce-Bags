@@ -1,10 +1,9 @@
-import { useSelector } from "react-redux";
 
 
 
 
 function FilterSize({size,setSize}) {
-  const products = useSelector((state) => state.products.products);
+
   const onChangeSizes= (e) => {
     setSize(e.target.id);
   };
@@ -21,7 +20,7 @@ function FilterSize({size,setSize}) {
 
           onChange={onChangeSizes}
         />
-        <label htmlFor="small">small</label>
+        <label htmlFor="small" className="text-[15px] md:text-[16px]">small</label>
       </div>
       
 
@@ -32,7 +31,7 @@ function FilterSize({size,setSize}) {
           id="medium"
           onChange={onChangeSizes}
         />
-        <label htmlFor="medium">medium</label>
+        <label htmlFor="medium" className="text-[15px] md:text-[16px]">medium</label>
       </div>
 
       <div className="form-group">
@@ -42,7 +41,7 @@ function FilterSize({size,setSize}) {
           id="large"
           onChange={onChangeSizes}
         />
-        <label htmlFor="large">large</label>
+        <label htmlFor="large" className="text-[15px] md:text-[16px]">large</label>
       </div>
     </div>
   );

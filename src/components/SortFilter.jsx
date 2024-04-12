@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "../style/shoppingpage.css";
 
-function SortFilter({ sortItem, setSortItem }) {
+function SortFilter({ sortItem, setSortItem , mobileSortFilter }) {
   const [select, setSelect] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -40,12 +40,12 @@ function SortFilter({ sortItem, setSortItem }) {
         </Link>
       </div>
 
-      <div className={`select-menu relative  `} ref={dropdownRef}>
+      <div className={`select-menu relative ${mobileSortFilter === false ? " " : " show "} `} ref={dropdownRef}>
         <div
           className={`select-btn  `}
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
-          <p>Sort by price: {select}</p>
+          <p  className=" text-[15px] md:text-[16px]"> Sort by price: {select}</p>
           <i
             className={`fa-solid fa-chevron-down ${
               isDropdownOpen ? "rotate-[-180deg]" : ""

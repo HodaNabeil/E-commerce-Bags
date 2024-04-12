@@ -25,16 +25,35 @@ function Shop() {
 
   const [maxPrice, setMaxPrice] = useState(500);
 
-  const [currentPage ,setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const [mobileSortFilter,setMobileSortFilter] =useState(false);
+  const [mobileSortFilter, setMobileSortFilter] = useState(false);
 
-  const [mobileFilterItem,setMobileFilterItem] =useState(false)
+  const [mobileFilterItem, setMobileFilterItem] = useState(false);
+
+  // useEffect(() => {
+  //   dispatch(fetchProducts());
+  // }, [dispatch]);
+
 
   useEffect(() => {
     dispatch(fetchProducts());
-  }, [dispatch]);
 
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+
+      if (scrollTop > window.innerHeight) {
+        setMobileSortFilter(false);
+        setMobileFilterItem(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [dispatch]);
   const filteredProducts = useMemo(() => {
     let updatedProducts = products;
 
@@ -77,12 +96,12 @@ function Shop() {
     }
 
     if (sortItem === "low") {
-      updatedProducts.sort((a, b) =>
-        parseFloat(a.sizes[0].price) - parseFloat(b.sizes[0].price)
+      updatedProducts.sort(
+        (a, b) => parseFloat(a.sizes[0].price) - parseFloat(b.sizes[0].price)
       );
     } else if (sortItem === "high") {
-      updatedProducts.sort((a, b) =>
-        parseFloat(b.sizes[0].price) - parseFloat(a.sizes[0].price)
+      updatedProducts.sort(
+        (a, b) => parseFloat(b.sizes[0].price) - parseFloat(a.sizes[0].price)
       );
     }
     return updatedProducts;
@@ -99,45 +118,51 @@ function Shop() {
   const product_per_page = 6;
   const pages = Math.ceil(filteredProducts.length / product_per_page);
 
-  const startIndex= (currentPage - 1 ) * product_per_page;
-  
-  const finishIndex = currentPage * product_per_page ;
+  const startIndex = (currentPage - 1) * product_per_page;
 
-  const orderProducts = filteredProducts.slice(startIndex ,finishIndex);
+  const finishIndex = currentPage * product_per_page;
+
+  const orderProducts = filteredProducts.slice(startIndex, finishIndex);
 
 
   return (
     <div className="shopping-page  ">
-  
-      <Header />
+      <Header  schangebackground={"#DDC2AB"}/>
 
-      <div className={`overlay-filter ${mobileSortFilter || mobileFilterItem ? "block" : "hidden"}`}></div>
+      <div
+        className={`overlay-filter ${
+          mobileSortFilter || mobileFilterItem ? "block" : "hidden"
+        }`}
+      ></div>
 
-        <div 
-          onClick={()=>{
-            setMobileSortFilter(!mobileSortFilter)
-            setMobileFilterItem(false)
-          }}
-            className=" sort-filter-mobile">
-            <i className="fa-solid fa-sort"></i>
-              Sort
-        </div>
-        <div 
-          onClick={()=>{
-            setMobileSortFilter(false)
-            setMobileFilterItem(!mobileFilterItem)
-          }}
-            className=" item-filter-mobile">
-            <i className="fa-solid fa-filter"></i>
-              Filter
-        </div>
+      <div
+        onClick={() => {
+          setMobileSortFilter(!mobileSortFilter);
+          setMobileFilterItem(false);
+        }}
+        className=" sort-filter-mobile"
+      >
+        <i className="fa-solid fa-sort"></i>
+        Sort
+      </div>
+      <div
+        onClick={() => {
+          setMobileSortFilter(false);
+          setMobileFilterItem(!mobileFilterItem);
+        }}
+        className=" item-filter-mobile"
+      >
+        <i className="fa-solid fa-filter"></i>
+        Filter
+      </div>
       <div className="bg-light">
-        <div className=" sortProducts  sm:bg-[#f0e2d9] top-[74px] relative">
-        
-          <SortFilter 
-           setMobileSortFilter={setMobileSortFilter} 
-           mobileSortFilter={mobileSortFilter}
-           sortItem={sortItem} setSortItem={setSortItem} />
+        <div className=" sortProducts  sm:bg-[#f0e2d9] top-[50px] relative">
+          <SortFilter
+            setMobileSortFilter={setMobileSortFilter}
+            mobileSortFilter={mobileSortFilter}
+            sortItem={sortItem}
+            setSortItem={setSortItem}
+          />
         </div>
 
         <div className="container container-shopping-page">
@@ -154,12 +179,19 @@ function Shop() {
             maxPrice={maxPrice}
             setMaxPrice={setMaxPrice}
             setMinPrice={setMinPrice}
+            mobileFilterItem={mobileFilterItem}
           />
-          <ProductList products={orderProducts}  />
+          <ProductList products={orderProducts} />
         </div>
-        <Pagination pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        <div  className=" container">
+        <Pagination
+          pages={pages}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+        </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -59,8 +59,8 @@ function LandingHome() {
       style={bgImagStyle}
       >
       </div>
-      <div className="header-slider">
-        <Header/>
+      <div className="header-slider ">
+        <Header schangebackground={" transparent "} />
       </div>
       <div className=" absolute element-center-transform">
           <h1 
