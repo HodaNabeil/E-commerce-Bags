@@ -23,7 +23,7 @@ const  headerRef= useRef()
             if (window.scrollY) {
                 headerRef.current.style.background = '#D39C80';
             } else {
-                headerRef.current.style.background = 'transparent';
+                headerRef.current.style.background = '#ddc2ab';
             }
         }
     };

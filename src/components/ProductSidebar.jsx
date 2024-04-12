@@ -23,7 +23,7 @@ function ProductSidebar({
 
 }) {
   return (
-    <div className="products-sidebar h-[95vh] bg-[#ddc2ab52] p-[10px] ">
+    <div className={`products-sidebar h-[95vh] bg-[#ddc2ab52] p-[10px] `}>
       <div>
         <h3 className="mb-[10px] ml-[10px] text-dark">Filter</h3>
         <FilterCategory

@@ -74,10 +74,6 @@
 
 /* Sidebar */
 
-.filter-category .form-group {
-  display: flex;
-  align-items: center;
-}
 .filter-category .form-group input {
   position: relative;
 }
@@ -254,6 +250,107 @@
 @media (max-width: 768px) {
   .options,
   .select-btn {
-    padding: 10px  !important;
+    padding: 10px !important;
+  }
+}
+
+.sort-filter-mobile {
+  display: none;
+}
+
+/* Midea */
+@media (max-width: 576px) {
+  .shopping-page .overlay-filter {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000c9;
+    left: 0;
+    top: 0;
+    z-index: 500;
+    transition: 0.2s all;
+    --webkit-transition: 0.2s all;
+    --o-transition: 0.2s all;
+    --moz-transition: 0.2s all;
+    --ms-transition: 0.2s all;
+  }
+  .sort-filter-section .links-page {
+    display: none;
+  }
+  .sort-filter-mobile  ,.item-filter-mobile{
+    display: flex;
+    align-items: center;
+    color: var(--dark-color);
+    position: fixed;
+
+    bottom: 0 !important;
+    background-color: var(--second-color);
+    padding: 10px;
+    text-transform: uppercase;
+    justify-content: center;
+    width: 50%;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .sort-filter-mobile {
+    left: 0;
+  }
+  .item-filter-mobile {
+    right: 0;
+  };
+  .sort-filter-mobile i {
+    margin-right: 5px;
+  }
+  .select-menu {
+    opacity: 0;
+  }
+  .select-menu.show {
+    opacity: 1;
+  }
+
+  .select-btn {
+    position: fixed;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 600;
+    width: 80% !important;
+  }
+  .options {
+    position: fixed;
+    left: 50%;
+    bottom: 70%;
+    transform: translate(-50%, -50%);
+    z-index: 600;
+    bottom: 90px;
+    width: 80% !important;
+  }
+  .container-shopping-page  {
+    gap: 0;
+  }
+  .products-sidebar{
+    position: fixed;
+    width: 70%;
+    background-color: var(--light-color);
+    height: 60vh;
+    z-index: 600;
+    display: grid;
+    padding: 20px;
+    top: 100px;
+    border-radius: 6px;
+    overflow-y: auto;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    z-index: 600;
+display: none;
+  }
+  .products-sidebar.show {
+  display: block;
+  }
+  
+  .container-shopping-page  {
+    justify-content: center;
   }
 }

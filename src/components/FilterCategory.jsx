@@ -1,10 +1,15 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-function FilterCategory({ setCategory}) {
-
+function FilterCategory({ setCategory }) {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
+
+  
+  const getItemCountForCategory = (category) => {
+    return products.filter((product) => product.category === category).length;
+  };
+
   const onChangeCategory = (e) => {
     setCategory(e.target.id);
   };
@@ -16,10 +21,12 @@ function FilterCategory({ setCategory}) {
           type="radio"
           name="filter"
           id="all"
-      
           onChange={onChangeCategory}
         />
-        <label htmlFor="all">all   <span>{products.length}</span></label>
+        <label htmlFor="all" className="flex justify-between items-center">
+          <span>all</span>
+          <span>{products.length}</span>
+        </label>
       </div>
 
       <div className="form-group">
@@ -27,12 +34,12 @@ function FilterCategory({ setCategory}) {
           type="radio"
           name="filter"
           id="handbag"
-
           onChange={onChangeCategory}
         />
-        <label htmlFor="handbag">handbag</label>
+        <label htmlFor="handbag"  className="flex justify-between items-center">
+          handbag <span>{getItemCountForCategory("handbag")}</span>
+        </label>
       </div>
-      
 
       <div className="form-group">
         <input
@@ -41,7 +48,9 @@ function FilterCategory({ setCategory}) {
           id="dufflebag"
           onChange={onChangeCategory}
         />
-        <label htmlFor="dufflebag">dufflebag</label>
+        <label htmlFor="dufflebag"  className="flex justify-between items-center">
+          dufflebag <span>{getItemCountForCategory("dufflebag")}</span>{" "}
+        </label>
       </div>
 
       <div className="form-group">
@@ -51,7 +60,9 @@ function FilterCategory({ setCategory}) {
           id="backbag"
           onChange={onChangeCategory}
         />
-        <label htmlFor="backbag">backbag</label>
+        <label htmlFor="backbag"  className="flex justify-between items-center">
+          backbag <span>{getItemCountForCategory("backbag")}</span>{" "}
+        </label>
       </div>
 
       <div className="form-group">
@@ -61,7 +72,9 @@ function FilterCategory({ setCategory}) {
           id="laptop"
           onChange={onChangeCategory}
         />
-        <label htmlFor="laptop">laptop</label>
+        <label htmlFor="laptop"  className="flex justify-between items-center">
+          laptop <span>{getItemCountForCategory("laptop")}</span>{" "}
+        </label>
       </div>
     </div>
   );

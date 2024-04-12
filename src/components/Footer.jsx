@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "../style/footer.css"
 function Footer() {
   return (
-    <div className="   bg-light  padding-y-50">
+    <div className="   bg-light  overflow-hidden  padding-y-50">
       <div className="container   grid  grid-cols-1 sm:grid-cols-2 gap-[25px] md:gap-[10px] lg:gap-[30px]  md:grid-cols-4">
         <div>
           <h4 className="  font-bold   md:text-[22px] lg:text-[25px] active-color  uppercase">
@@ -139,7 +139,7 @@ function Footer() {
               </span>
             </div>
           </div>
-          <div className="  container-icons mt-[30px]  flex  justify-center gap-x-[20px] md:gap-x-0  md:justify-between  items-center">     
+          <div className="  overflow-hidden  container-icons mt-[30px]  flex  justify-center gap-x-[20px] md:gap-x-0  md:justify-between  items-center">     
             <span className="  w-[35px] h-[35px] md:w-[30px] md:h-[30px] p-[15px]  lg:w-[40px] lg:h-[40px] rounded-[50px] cursor-pointer bg-second-color element-center-flex       relative ">            <i className="   z-[2]    fa-brands fa-facebook"></i></span>
               <span className="  w-[35px] h-[35px] md:w-[30px] md:h-[30px] p-[15px]  lg:w-[40px] lg:h-[40px] rounded-[50px] cursor-pointer bg-second-color element-center-flex     relative    ">      <i className="      z-[2]     fa-brands fa-instagram"></i></span>
               <span className="  w-[35px] h-[35px] md:w-[30px] md:h-[30px] p-[15px]  lg:w-[40px] lg:h-[40px] rounded-[50px] cursor-pointer bg-second-color element-center-flex     relative    ">    <i className="        z-[2]   fa-brands fa-twitter"></i></span>

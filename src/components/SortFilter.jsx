@@ -29,9 +29,9 @@ function SortFilter({ sortItem, setSortItem }) {
   };
 
   return (
-    <div className="flex-between container p-[10px]">
-      <div>
-        <Link to={"/"} className="text-dark ml-[40px]">
+    <div className=" sort-filter-section flex-between container p-[10px]">
+      <div className=" links-page">
+        <Link to={"/"} className="text-dark md:ml-[40px]">
           Home
         </Link>
         <span className="mx-[6px] text-[18px]">&gt;</span>
@@ -40,9 +40,9 @@ function SortFilter({ sortItem, setSortItem }) {
         </Link>
       </div>
 
-      <div className="select-menu relative" ref={dropdownRef}>
+      <div className={`select-menu relative  `} ref={dropdownRef}>
         <div
-          className="select-btn"
+          className={`select-btn  `}
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
           <p>Sort by price: {select}</p>
@@ -55,15 +55,16 @@ function SortFilter({ sortItem, setSortItem }) {
 
         {isDropdownOpen && (
           <ul className="options">
-            <li 
-             onClick={() => handleOptionClick("not sort")}>
-               <i className="   mr-[5px] fa-solid fa-arrows-rotate"></i>not sort</li>
-            <li 
-              onClick={() => handleOptionClick("low to high")}>
-              <i className="  mr-[5px]  fa-solid fa-arrow-down-wide-short"></i> Low to high
+            <li onClick={() => handleOptionClick("not sort")}>
+              <i className="   mr-[5px] fa-solid fa-arrows-rotate"></i>not sort
+            </li>
+            <li onClick={() => handleOptionClick("low to high")}>
+              <i className="  mr-[5px]  fa-solid fa-arrow-down-wide-short"></i>{" "}
+              Low to high
             </li>
             <li onClick={() => handleOptionClick("high to low")}>
-              <i className="   mr-[5px]   fa-solid fa-arrow-up-short-wide"></i> High to low
+              <i className="   mr-[5px]   fa-solid fa-arrow-up-short-wide"></i>{" "}
+              High to low
             </li>
           </ul>
         )}

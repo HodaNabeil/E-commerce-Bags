@@ -5,8 +5,11 @@ import ProductSidebar from "../components/ProductSidebar";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../Store/ProductSlice/productsSlice";
 import "../style/shoppingpage.css";
-import { Outlet } from "react-router-dom";
+
 import SortFilter from "../components/SortFilter";
+import Pagination from "../components/Pagination";
+
+import Footer from "../components/Footer";
 
 function Shop() {
   const dispatch = useDispatch();
@@ -21,6 +24,12 @@ function Shop() {
   const [minPrice, setMinPrice] = useState(0);
 
   const [maxPrice, setMaxPrice] = useState(500);
+
+  const [currentPage ,setCurrentPage] = useState(1);
+
+  const [mobileSortFilter,setMobileSortFilter] =useState(false);
+
+  const [mobileFilterItem,setMobileFilterItem] =useState(false)
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -87,13 +96,48 @@ function Shop() {
     return <div>Error: {error}</div>;
   }
 
+  const product_per_page = 6;
+  const pages = Math.ceil(filteredProducts.length / product_per_page);
+
+  const startIndex= (currentPage - 1 ) * product_per_page;
+  
+  const finishIndex = currentPage * product_per_page ;
+
+  const orderProducts = filteredProducts.slice(startIndex ,finishIndex);
+
+
   return (
-    <div className="shopping-page">
+    <div className="shopping-page  ">
+  
       <Header />
 
+      <div className={`overlay-filter ${mobileSortFilter || mobileFilterItem ? "block" : "hidden"}`}></div>
+
+        <div 
+          onClick={()=>{
+            setMobileSortFilter(!mobileSortFilter)
+            setMobileFilterItem(false)
+          }}
+            className=" sort-filter-mobile">
+            <i className="fa-solid fa-sort"></i>
+              Sort
+        </div>
+        <div 
+          onClick={()=>{
+            setMobileSortFilter(false)
+            setMobileFilterItem(!mobileFilterItem)
+          }}
+            className=" item-filter-mobile">
+            <i className="fa-solid fa-filter"></i>
+              Filter
+        </div>
       <div className="bg-light">
-        <div className="bg-[#f0e2d9] top-[74px] relative">
-          <SortFilter sortItem={sortItem} setSortItem={setSortItem} />
+        <div className=" sortProducts  sm:bg-[#f0e2d9] top-[74px] relative">
+        
+          <SortFilter 
+           setMobileSortFilter={setMobileSortFilter} 
+           mobileSortFilter={mobileSortFilter}
+           sortItem={sortItem} setSortItem={setSortItem} />
         </div>
 
         <div className="container container-shopping-page">
@@ -111,9 +155,11 @@ function Shop() {
             setMaxPrice={setMaxPrice}
             setMinPrice={setMinPrice}
           />
-          <ProductList products={filteredProducts} />
+          <ProductList products={orderProducts}  />
         </div>
+        <Pagination pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
       </div>
+      <Footer/>
     </div>
   );
 }

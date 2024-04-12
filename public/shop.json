@@ -23,10 +23,10 @@
     "title": "hand bag",
     "category": "handbag",
     "image": [
-      "/Img/hangbagewhite_2.jpg",
-      "/Img/hangbagewhite_2.jpg",
-      "/Img/hangbagewhite_2.jpg",
-      "/Img/hangbagewhite_2.jpg"
+      "/Img/hangbagewhite_2.png",
+      "/Img/hangbagewhite_2.png",
+      "/Img/hangbagewhite_2.png",
+      "/Img/hangbagewhite_2.png"
     ],
     "colors": ["black", "Beige"],
     "prand": ["adidas", "cuyana", "fendi"],
@@ -42,10 +42,10 @@
     "title": "backbag",
     "category": "backbag",
     "image": [
-      "/Img/wihte_2backbag.jpg",
-      "/Img/wihte_2backbag.jpg",
-      "/Img/wihte_2backbag.jpg",
-      "/Img/wihte_2backbag.jpg"
+      "/Img/wihte_2backbag.png",
+      "/Img/wihte_2backbag.png",
+      "/Img/wihte_2backbag.png",
+      "/Img/wihte_2backbag.png"
     ],
     "colors": ["white", "black"],
     "prand": ["adidas", "cuyana", "fendi"],
