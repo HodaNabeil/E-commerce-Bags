@@ -147,16 +147,24 @@ body {
 .container {
   padding-left:  60px !important;
   padding-right: 60px !important;
-  margin:  auto !important;
+  margin-left:  auto !important;
+  margin-right: auto !important;
 }
-@media (max-width:769px) {
+@media (max-width:991px) {
+  .container {
+    padding-left:  40px !important;
+    padding-right: 40px !important;
+  }
+  
+}
+@media (max-width:768px) {
   .container {
     padding-left:  30px !important;
     padding-right: 30px !important;
   }
   
 }
-@media (max-width:577px) {
+@media (max-width:576px) {
   .container {
     padding-left:  25px !important;
     padding-right: 25px !important;
@@ -168,4 +176,9 @@ body {
     padding-left:  20px !important;
     padding-right: 20px !important;
   }
+}
+
+h4 ,p ,h3 {
+  text-transform: capitalize;
+  
 }

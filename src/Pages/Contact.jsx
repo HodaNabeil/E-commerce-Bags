@@ -16,7 +16,7 @@ function Contact() {
         >
           <div className=" w-[100%] md:w-[49%]">
             <img
-              className=" object-cover rounded-[4px] w-[100%]  h-[100vh] md:h-[100%]"
+              className=" object-cover rounded-[4px] w-[100%]  h-[100vh] "
               src={require(`../IMg/contactsmall.jpg`)}
               alt=""
             />

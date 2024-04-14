@@ -11,6 +11,7 @@ import Pagination from "../components/Pagination";
 
 import Footer from "../components/Footer";
 
+
 function Shop() {
   const dispatch = useDispatch();
   const { products, loading, error } = useSelector((state) => state.products);
@@ -192,6 +193,7 @@ function Shop() {
         </div>
       </div>
       <Footer />
+
     </div>
   );
 }

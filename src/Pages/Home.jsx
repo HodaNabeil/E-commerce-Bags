@@ -18,8 +18,8 @@ function Home() {
     <div>
       <LandingHome/>
         <OurCollections/>
-        <Newarrivals/>
-        <NewProducts/>
+        <Newarrivals />
+        <NewProducts title="New Arrivals"/>
         <OfferBags/>
         <Why />
         <Story/>

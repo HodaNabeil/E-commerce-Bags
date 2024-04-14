@@ -7,7 +7,7 @@ import img4  from "../IMg/newproduct-sh.png";
 import "../style/newproducts.css"
 import { Link } from "react-router-dom";
 
-function NewProducts() {
+function NewProducts({title}) {
   const newproduct = [
     {
       img:img1,
@@ -35,7 +35,7 @@ function NewProducts() {
       <div className="container  ">
           <h2  
             className=" pt-[50px] mb-[30px] text-[20px] sm:text-[22px] md:text-[25px]  text-dark element-center-flex ">
-              New Arrivals
+            {title}
           </h2>
           <div className="pb-[50px] grid grid-cols-2 md:grid-cols-4 gap-[15px] ">
             {newproduct.map((item ,index)=> {

@@ -10,7 +10,8 @@ import Cart from './Pages/Cart';
 import Shop from './Pages/Shop';
 import Contact from './Pages/Contact';
 import Checkout from './Pages/Checkout';
-import SingleProduct from './Pages/SingleProduct';
+import SingleProduct from './Pages/SingleProduct/SingleProduct';
+
 
 function App() {
   return (
@@ -26,10 +27,12 @@ function App() {
 
         {/* Nested routes for products */}
         <Route path="/products" element={<Shop />}>
-          <Route path=":id" element={<SingleProduct />} />
         </Route>
+
+        <Route path="/products/:id" element={<SingleProduct />} />
       </Routes>
-      {/* <Footer /> */}
+
+
     </div>
   );
 }
