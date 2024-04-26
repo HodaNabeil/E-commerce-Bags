@@ -1,0 +1,32 @@
+
+
+
+.details-cart div > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  color:  var(--dark-color);
+
+
+}
+
+.details-cart div > div  h4 {
+  color:  var(--dark-color); 
+  font-size: 15px;
+}
+
+.details-cart a  {
+  display: block;
+  padding: 10px 12px;
+  background-color: var(--second-color);
+  border-radius: 2px;
+  color:var(--light-color);
+  text-align: center;
+  margin:15px  0;
+  transition: 0.3s all ;
+
+}
+.details-cart a:hover {
+  background-color:  #be927b;
+}

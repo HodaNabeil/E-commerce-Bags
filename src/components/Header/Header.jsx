@@ -2,7 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 
 import "./header.css";
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
+
+
 function Header({ schangebackground }) {
+  const cartNumbers= useSelector((state) => state.cart);
+
   const headerRef = useRef();
   const [openNav, setOpenNav] = useState(false);
   const [activeLinke, setActiveLinke] = useState("Home");
@@ -84,13 +89,13 @@ function Header({ schangebackground }) {
         <Link to={"/favorites"}>
           <div className=" relative">
             <i className="fa-regular fa-heart"></i>
-            <span className="icon-number">10</span>
+            <span className="icon-number">5</span>
           </div>
         </Link>
         <Link to={"/cart"}>
           <div className=" relative">
             <i className="fa-solid fa-basket-shopping"></i>
-            <span className="icon-number">0</span>
+            <span className="icon-number">{cartNumbers.length}</span>
           </div>
         </Link>
 
