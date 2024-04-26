@@ -9,6 +9,7 @@
       "/Img/new-products-1.png",
       "/Img/new-products-1.png"
     ],
+    "quantity" :1,
     "colors": ["white", "Beige"],
     "prand": ["cuyana", "fendi"],
     "sizes": [
@@ -28,6 +29,7 @@
       "/Img/hangbagewhite_2.png",
       "/Img/hangbagewhite_2.png"
     ],
+    "quantity" :1,
     "colors": ["black", "Beige"],
     "prand": ["adidas", "cuyana", "fendi"],
     "sizes": [
@@ -47,6 +49,7 @@
       "/Img/wihte_2backbag.png",
       "/Img/wihte_2backbag.png"
     ],
+    "quantity" :1,
     "colors": ["white", "black"],
     "prand": ["adidas", "cuyana", "fendi"],
     "sizes": [
@@ -60,6 +63,7 @@
     "id": 4,
     "title": "dufflebag",
     "category": "dufflebag",
+    "quantity" :1,
     "image": [
       "/Img/dufflebag_4.png",
       "/Img/dufflebag_4.png",
@@ -86,6 +90,7 @@
       "/Img/new-lab.png",
       "/Img/new-lab.png"
     ],
+    "quantity" :1,
     "colors": ["Beige", "white"],
     "prand": ["adidas", "cuyana", "fendi"],
     "sizes": [
@@ -97,6 +102,7 @@
     "id": 6,
     "title": "backbag",
     "category": "backbag",
+    "quantity" :1,
     "image": [
       "/Img/backbag_6.png",
       "/Img/backbag_6.png",
@@ -116,6 +122,7 @@
     "id": 7,
     "title": "hand bag",
     "category": "handbag",
+    "quantity" :1,
     "image": [
       "/Img/hanbag_7.png",
       "/Img/hanbag_7.png",
@@ -134,6 +141,7 @@
     "id": 8,
     "title": "dufflebag",
     "category": "dufflebag",
+    "quantity" :1,
     "image": [
       "/Img/duffle_8.png",
       "/Img/duffle_8.png",
@@ -153,6 +161,7 @@
     "id": 9,
     "title": "hand bag",
     "category": "handbag",
+    "quantity" :1,
     "image": [
       "/Img/new-products-1.png",
       "/Img/new-products-1.png",
@@ -173,6 +182,7 @@
     "id": 10,
     "title": "laptop",
     "category": "laptop",
+    "quantity" :1,
     "image": [
       "/Img/labtop_10.png",
       "/Img/labtop_10.png",
@@ -191,6 +201,7 @@
     "id": 11,
     "title": "laptop",
     "category": "laptop",
+    "quantity" :1,
     "image": [
       "/Img/new-lab.png",
       "/Img/new-lab.png",
@@ -210,6 +221,7 @@
     "id": 12,
     "title": "dufflebag",
     "category": "dufflebag",
+    "quantity" :1,
     "image": [
       "/Img/dufflebag12.png",
       "/Img/dufflebag12.png",
@@ -230,6 +242,7 @@
     "id": 13,
     "title": "hand bag",
     "category": "backbag",
+    "quantity" :1,
     "image": [
       "/Img/collection_1.png",
       "/Img/collection_1.png",
@@ -250,6 +263,7 @@
     "id": 14,
     "title": "hand bag",
     "category": "dufflebag",
+    "quantity" :1,
     "image": [
       "/Img/offer_4.png",
       "/Img/offer_4.png",
@@ -269,6 +283,7 @@
     "id": 15,
     "title": "backbag",
     "category": "backbag",
+    "quantity" :1,
     "image": [
       "/Img/offer_2.png",
       "/Img/offer_2.png",
@@ -287,6 +302,7 @@
   },
   {
     "id": 16,
+    "quantity" :1,
     "title": "dufflebag",
     "category": "dufflebag",
     "image": [
@@ -307,6 +323,7 @@
   },
   {
     "id": 17,
+    "quantity" :1,
     "title": "hand bag",
     "category": "handbag",
     "image": [
@@ -327,6 +344,7 @@
     "id": 18,
     "title": "backbag",
     "category": "backbag",
+    "quantity" :1,
     "image": [
       "/Img/backbag_6.png",
       "/Img/backbag_6.png",
@@ -347,6 +365,7 @@
     "id": 19,
     "title": "hand bag",
     "category": "handbag",
+    "quantity" :1,
     "image": [
       "/Img/hanbag_7.png",
       "/Img/hanbag_7.png",
@@ -367,6 +386,7 @@
     "id": 20,
     "title": "dufflebag",
     "category": "dufflebag",
+    "quantity" :1,
     "image": [
       "/Img/duffle_8.png",
       "/Img/duffle_8.png",
@@ -386,6 +406,7 @@
   {
     "id": 21,
     "title": "hand bag",
+    "quantity" :1,
     "category": "handbag",
     "image": [
       "/Img/new-products-1.png",
@@ -406,6 +427,7 @@
     "id": 22,
     "title": "dufflebag",
     "category": "dufflebag",
+    "quantity" :1,
     "image": [
       "/Img/duffle_8.png",
       "/Img/duffle_8.png",

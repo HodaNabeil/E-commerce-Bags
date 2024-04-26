@@ -12,33 +12,23 @@ import {
 } from "../../Store/ProductSlice/Cart";
 
 function SingleProduct() {
+  const { id } = useParams();
+  const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
+  const product = products.find((product) => product.id === +id);
+
   const [selectProduct, setSelectProduct] = useState({});
   const [selectSize, setSelectSize] = useState({});
   const [selectColor, setSelectColor] = useState("");
   const [price, setPrice] = useState(null);
+  const [newQuantity, setNewQuantity] = useState(1);
 
-
-
-
-  const [changeQuantity, setChangeQuantity] = useState(0); // Use state to manage quantity
-  const dispatch = useDispatch();
-  const { id } = useParams();
-
-
-  const product = products.find((product) => product.id === +id);
-  
-  
-  const ProductQuantity = useSelector((state) => state.cart);
-
-  // Get the quantity of the current product in the cart
-  const currentProductQuantity =
-    ProductQuantity.find((item) => item.id === product.id)?.quantity|| 1;
-
-    useEffect(() => {
-      // Update changeQuantity when currentProductQuantity changes
-      setChangeQuantity(currentProductQuantity);
-    }, [currentProductQuantity]);
+  useEffect(() => {
+    if (product) {
+      const defaultSize = product.sizes[0];
+      handleSizeSelection(product.id, defaultSize);
+    }
+  }, [product]);
 
   const handleSizeSelection = (productId, size) => {
     setSelectProduct({
@@ -52,21 +42,51 @@ function SingleProduct() {
       ...selectSize,
       [productId]: size.size,
     });
-
     setPrice(size.price);
+  };
+
+  const handleIncreaseQuantity = () => {
+    setNewQuantity((prev) => prev + 1);
+    dispatch(
+      increaseQuantity({
+        ...product,
+        id: id,
+        selectSize: selectSize,
+        color: selectColor,
+        quantity: newQuantity,
+      })
+    );
+  };
+
+  const handleDecreaseQuantity = () => {
+    if (newQuantity > 1) {
+      setNewQuantity((prev) => prev - 1);
+    }
+
+    decreaseQuantity({
+      ...product,
+      id: id,
+      selectSize: selectSize,
+      color: selectColor,
+      quantity: newQuantity,
+    });
+  };
+
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        ...product,
+        selectSize: selectSize[product.id],
+        price: selectProduct.price,
+        color: selectColor,
+        quantity: newQuantity,
+      })
+    );
   };
 
   if (!product) {
     return <div>Product not found</div>;
   }
-
-
-  function handleChangeQuantity() {
-    if (changeQuantity > 0) {
-      setChangeQuantity(changeQuantity - 1); // Update changeQuantity state
-    }
-  }
-
 
   return (
     <div className="bg-light  page-single-product relative top-[74px] ">
@@ -176,54 +196,26 @@ function SingleProduct() {
               gap-[10px] border border-[#D39C80] py-[6px] px-[20px] 
               rounded-[6px] capitalize text-dark  "
               >
-                <div
-                  // onClick={() =>
-                  //   dispatch(
-                  //     increaseQuantity({
-                  //       id: product.id,
-                  //       selectSize: product.selectSize,
-                  //       color: product.color,
-                  //     })
-                  //   )
-                  // }
-
-              
-                  
-                >
-              <i className="fa-solid fa-plus"></i>
+                <div onClick={handleIncreaseQuantity}>
+                  <i className="fa-solid fa-plus"></i>
                 </div>
                 <div className="mx-[10px] text-sm  sm:text-[16px] ">
-                {changeQuantity}
+                  {newQuantity}
                 </div>
-                <div
-
-                  onClick={handleChangeQuantity}
-                >
+                <div onClick={handleDecreaseQuantity}>
                   <i className="fa-solid fa-minus"></i>
                 </div>
               </div>
 
               <div
-                onClick={() => {
-
-                  dispatch(
-                    addToCart({
-                      ...product,
-                      selectSize: selectSize[product.id],
-                      price: selectProduct.price,
-                      color: selectColor,
-                    })
-                  );
-
-                  
-                }}
+                onClick={handleAddToCart}
                 className={`flex gap-[15px] justify-center items-center 
                 border   border-[#D39C80] py-[6px] px-[20px] rounded-[6px]
                 
                 ${
                   price > 0 && selectColor !== ""
                     ? " cursor-pointer"
-                    : "  pointer-events-none"
+                    : "  pointer-events-none  "
                 }
                 `}
               >

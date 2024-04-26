@@ -1,11 +1,20 @@
+
 import { createSlice } from "@reduxjs/toolkit";
+function getItemLocalStorage () {
+  const getItem= localStorage.getItem("card");
+  return getItem ? JSON.parse(getItem) :[]
+}
+
+function setItemLocalStorage (card) {
+localStorage.setItem("card" ,JSON.stringify(card))
+}
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: [],
+  initialState:getItemLocalStorage (),
   reducers: {
     addToCart: (state, action) => {
-      const { id, title, image, price, selectSize, color } = action.payload;
+      const { id, title, image, price, selectSize, color , quantity} = action.payload;
 
       const findProduct = state.find(
         (product) => product.id === id && product.selectSize === selectSize && product.color === color
@@ -21,9 +30,10 @@ const cartSlice = createSlice({
           price,
           selectSize,
           color,
-          quantity: 1,
+          quantity,
         });
       }
+      setItemLocalStorage(state)
     },
     deleteFromCart: (state, action) => {
       const { id, selectSize  ,color} = action.payload;
@@ -31,11 +41,12 @@ const cartSlice = createSlice({
       const updateCart = state.filter(
         (product) => !(product.id === id && product.selectSize === selectSize && product.color === color)
       );
+      setItemLocalStorage([...updateCart])
       return updateCart;
     },
 
     increaseQuantity: (state, action) => {
-      const { id, selectSize, color } = action.payload;
+      const { id, selectSize, color ,} = action.payload;
 
       const increaseProduct = state.find(
         (product) => product.id === id && product.selectSize === selectSize &&  product.color === color
@@ -44,6 +55,7 @@ const cartSlice = createSlice({
       if (increaseProduct) {
         increaseProduct.quantity += 1;
       }
+      setItemLocalStorage(state)
     },
 
     decreaseQuantity: (state, action) => {
@@ -56,10 +68,13 @@ const cartSlice = createSlice({
       if (decreaseProduct && decreaseProduct.quantity > 1) {
         decreaseProduct.quantity -= 1;
       }
+      setItemLocalStorage(state)
     },
 
-    clearCart: () => {
-      return [];
+    clearProduct: (state, action) => {
+      localStorage.removeItem("card")
+      return []
+    
     },
   },
 });

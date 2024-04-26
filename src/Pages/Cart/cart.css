@@ -1,4 +1,7 @@
 
+.cart-item img {
+  filter: drop-shadow(6px 6px 2px rgb(0, 0, 0, 0.1));
+}
 
 
 .details-cart div > div {
@@ -29,4 +32,28 @@
 }
 .details-cart a:hover {
   background-color:  #be927b;
+}
+
+.btn-remove:hover {
+  background-color: var(--second-color);
+  color: var(--light-color);;
+  transition: var(--transition);
+  --o-transition: var(--transition);
+  --webkite-transition: var(--transition);
+  --moz-transition: var(--transition);
+  --ms-transition: var(--transition);
+}
+.btn-remove:hover  i {
+  color: var(--light-color);;
+  transition: var(--transition);
+  --o-transition: var(--transition);
+  --webkite-transition: var(--transition);
+  --moz-transition: var(--transition);
+  --ms-transition: var(--transition);
+}
+@media (max-width:576px) {
+
+  .cart-item {
+
+  }
 }

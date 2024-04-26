@@ -3,82 +3,93 @@ import Header from "../../components/Header/Header";
 
 import "./cart.css";
 import { useDispatch, useSelector } from "react-redux";
-import { decreaseQuantity, deleteFromCart, increaseQuantity } from "../../Store/ProductSlice/Cart";
+import {
+  decreaseQuantity,
+  deleteFromCart,
+  increaseQuantity,
+} from "../../Store/ProductSlice/Cart";
 function Cart() {
-
   const products = useSelector((state) => state.cart);
 
-  
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
     <div className="bg-light">
-      <Header></Header>
+      <Header schangebackground={"#DDC2AB"}></Header>
       <div
         className="  container pt-[120px] pb-[20px] 
          flex flex-wrap  lg:flex-nowrap gap-x-[30px] "
       >
         <div className=" w-[100%] lg:w-[60%] ">
-          {products.map((product ,index) => {
+          {products.map((product, index) => {
             return (
               <div
                 key={index}
-                className=" border  mb-[20px] flex  relative border-[#ddc2ab] p-[20px] rounded-[6px] cart-item"
+                className=" cart-item border  mb-[20px] flex  relative
+                 border-[#ddc2ab]  p-[10px] md:p-[20px] rounded-[6px] cart-item"
               >
-                <div className=" w-[25%]">
+                <div className=" w-[30%]">
                   <img
-                    className=" w-[100px] h-[150px]"
+                    className="  object-cover p-[10px] w-[100px]  sm:w-[140px] h-[100px] sm:h-[150px]"
                     src={product.image[0]}
                     alt={product.title}
                   />
                 </div>
-                <div className=" w-[75%] flex  flex-col justify-center ">
+                <div className=" w-[70%] flex  flex-col justify-center ">
                   <div className="  flex-between  text-dark ">
                     <h5>{product.title}</h5>
-                    <p >{product.price} $</p>
+                    <p>{product.price} $</p>
                   </div>
 
-                  <div className=" text-dark flex-between my-[20px]  gap-x-[30px]">
-                    <p
-                    >
-                      {product.selectSize}
-                    </p>
+                  <div className=" text-dark flex-between my-[10px] sm:my-[15px]  gap-x-[30px]">
+                    <p>{product.selectSize}</p>
                     <div
                       className="  flex items-center   top-2 w-[115px]  border border-[#ddc2ab] 
                     rounded-[2px]  py-[5px] px-[10px]   gap-x-[25px]"
                     >
                       <i
-                       onClick={ ()=>dispatch(increaseQuantity({
-                        id:product.id,
-                        selectSize:product.selectSize,
-                        color:product.color
-
-                       }))}
- 
-                       className="    cursor-pointer fa-solid fa-plus"></i>
+                        onClick={() =>
+                          dispatch(
+                            increaseQuantity({
+                              id: product.id,
+                              selectSize: product.selectSize,
+                              color: product.color,
+                            })
+                          )
+                        }
+                        className="    cursor-pointer fa-solid fa-plus"
+                      ></i>
                       <p> {product.quantity}</p>
-                      <i   
-                         onClick={ ()=>dispatch(decreaseQuantity({
-                          id:product.id,
-                          selectSize:product.selectSize,
-                          color:product.color
-  
-                         }))}
-                      className="  cursor-pointer fa-solid fa-minus"></i>
+                      <i
+                        onClick={() =>
+                          dispatch(
+                            decreaseQuantity({
+                              id: product.id,
+                              selectSize: product.selectSize,
+                              color: product.color,
+                            })
+                          )
+                        }
+                        className="  cursor-pointer fa-solid fa-minus"
+                      ></i>
                     </div>
                   </div>
                   <div className=" text-dark flex-between">
                     <span>{product.color}</span>
 
                     <button
-                     onClick={ ()=>  dispatch(deleteFromCart({
-                      id:product.id,
-                      selectSize:product.selectSize,
-                      color:product.color
-                     }))}
-                     className="border w-[115px] border-[#ddc2ab] rounded-[2px]  py-[5px] px-[10px] ">
-                      <i className=" text-[#3d3333] mr-[5px]    hover:text-[#D39C80]  duration-150 transition-colors  fa-solid fa-trash"></i>{" "}
-                        Remove
+                      onClick={() =>
+                        dispatch(
+                          deleteFromCart({
+                            id: product.id,
+                            selectSize: product.selectSize,
+                            color: product.color,
+                          })
+                        )
+                      }
+                      className=" btn-remove border w-[115px]    border-[#ddc2ab] rounded-[2px]  py-[5px] px-[10px] "
+                    >
+                      <i className=" text-[#3d3333] mr-[5px]     fa-solid fa-trash"></i>
+                      Remove
                     </button>
                   </div>
                 </div>
