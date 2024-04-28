@@ -14,7 +14,7 @@ const cartSlice = createSlice({
   initialState:getItemLocalStorage (),
   reducers: {
     addToCart: (state, action) => {
-      const { id, title, image, price, selectSize, color , quantity} = action.payload;
+      const { id, title, image, price, selectSize, color , quantity ,discount} = action.payload;
 
       const findProduct = state.find(
         (product) => product.id === id && product.selectSize === selectSize && product.color === color
@@ -31,6 +31,7 @@ const cartSlice = createSlice({
           selectSize,
           color,
           quantity,
+          discount
         });
       }
       setItemLocalStorage(state)
@@ -84,7 +85,7 @@ export const {
   deleteFromCart,
   decreaseQuantity,
   increaseQuantity,
-  clearCart,
+  clearProduct,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

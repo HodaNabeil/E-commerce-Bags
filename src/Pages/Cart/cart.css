@@ -1,4 +1,6 @@
-
+.page-cart .header .menu-icon  span {
+  background-color: var(--light-color) !important;
+}
 .cart-item img {
   filter: drop-shadow(6px 6px 2px rgb(0, 0, 0, 0.1));
 }

@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../Store/ProductSlice/Cart";
+import { addToFavorites } from "../Store/ProductSlice/FavoritesSlice";
 
 
 function CardItem({ product }) {
@@ -19,7 +20,7 @@ function CardItem({ product }) {
             className="  container-box-icon hidden flex-col absolute  top-[33%]   
             translate-y-[-50%] right-[10px] "
           >
-            <span
+            <span  onClick={()=>dispatch(addToFavorites(product))}
               className="  box-icon  duration-500 transition-all  
               relative  w-[25px] h-[25px]   sm:w-[35px] sm:h-[35px] 
               lg:w-[40px] lg:h-[40px] element-center-flex  rounded-[50px] color-light 

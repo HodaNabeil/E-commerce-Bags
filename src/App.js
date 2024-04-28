@@ -1,17 +1,21 @@
 import './App.css';
 import "../src/all.min.css";
-import Home from "./Pages/Home"
 
-import { Outlet, Route, Routes } from "react-router-dom";
+
+import {  Route, Routes } from "react-router-dom";
 import About from "./Pages/About"
-import Favorites from './Pages/Favorites';
+
 import Account from './Pages/Account';
+
+
+import Home from "./Pages/Home/Home"
 
 import Shop from './Pages/Shop';
 import Contact from './Pages/Contact';
 import Checkout from './Pages/Checkout';
 import SingleProduct from './Pages/SingleProduct/SingleProduct';
 import Cart from './Pages/Cart/Cart';
+import Favorites from './Pages/Favorites/Favorites';
 
 
 function App() {

@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 function Header({ schangebackground }) {
   const cartNumbers= useSelector((state) => state.cart);
+  const favorites = useSelector((state)=> state.favorites)
 
   const headerRef = useRef();
   const [openNav, setOpenNav] = useState(false);
@@ -18,6 +19,8 @@ function Header({ schangebackground }) {
         headerRef.current.style.background = window.scrollY
           ? "#D39C80"
           : schangebackground;
+
+          headerRef.current.style.color=window.scrollY?  "#f8f2EE" : "#353431" 
       }
     };
 
@@ -89,7 +92,7 @@ function Header({ schangebackground }) {
         <Link to={"/favorites"}>
           <div className=" relative">
             <i className="fa-regular fa-heart"></i>
-            <span className="icon-number">5</span>
+            <span className="icon-number">{favorites.length}</span>
           </div>
         </Link>
         <Link to={"/cart"}>

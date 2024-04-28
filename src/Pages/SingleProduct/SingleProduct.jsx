@@ -23,6 +23,8 @@ function SingleProduct() {
   const [price, setPrice] = useState(null);
   const [newQuantity, setNewQuantity] = useState(1);
 
+  const [activeLink,setActiveLink] = useState(false)
+
   useEffect(() => {
     if (product) {
       const defaultSize = product.sizes[0];
@@ -82,6 +84,7 @@ function SingleProduct() {
         quantity: newQuantity,
       })
     );
+    setActiveLink(true)
   };
 
   if (!product) {
@@ -210,8 +213,9 @@ function SingleProduct() {
               <div
                 onClick={handleAddToCart}
                 className={`flex gap-[15px] justify-center items-center 
-                border   border-[#D39C80] py-[6px] px-[20px] rounded-[6px]
+                border text-dark   border-[#D39C80] py-[8px] px-[20px] rounded-[6px]
                 
+                ${activeLink &&  "bg-[#db794a]  border-[#db794a] text-[#f8f2EE]"}
                 ${
                   price > 0 && selectColor !== ""
                     ? " cursor-pointer"
@@ -219,14 +223,14 @@ function SingleProduct() {
                 }
                 `}
               >
-                <img
-                  className=" w-[25px]"
-                  src={require(`../../IMg/shopping-bag.png`)}
-                  alt="Add To Cart"
-                />
+                <i className=" fa-solid fa-basket-shopping"></i>
+              
                 <span
-                  className="  capitalize text-dark 
-                    text-sm  sm:text-[16px] "
+                  className={`
+                  capitalize 
+                  text-sm  sm:text-[16px]
+              
+                  `}
                 >
                   Add To Cart
                 </span>
@@ -236,7 +240,7 @@ function SingleProduct() {
             <hr className="  border-[#d4d0d0] " />
             <div className=" my-[10px] flex items-start ">
               <img
-                className=" relative w-[28px] md:w-[32px]  right-[20px]"
+                className=" relative w-[28px] md:w-[32px]  right-[20px] "
                 src={require(`../../IMg/truck.png`)}
                 alt=" Delivery"
               />
