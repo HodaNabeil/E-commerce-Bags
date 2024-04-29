@@ -1,4 +1,6 @@
-
+.page-favorites .header .menu-icon  span {
+  background-color: var(--light-color) !important;
+}
 .page-favorites .product-item  h4 ,.page-favorites .product-item span {
   --transition: 0.4s all ease;
   --o-transition: 0.4s all ease;

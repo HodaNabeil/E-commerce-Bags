@@ -9,11 +9,11 @@ function Favorites() {
   const favorites = useSelector((state) => state.favorites);
 
   return   favorites.length > 0 ? (
-    <div>
+    <div className="page-favorites ">
       <Header></Header>
 
 
-      <div className="container pt-[100px] pb-[40px] page-favorites">
+      <div className="container pt-[100px] pb-[40px] ">
         <h2
           className=" element-center-flex 
           active-color  font-medium 

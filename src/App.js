@@ -5,7 +5,6 @@ import "../src/all.min.css";
 import {  Route, Routes } from "react-router-dom";
 import About from "./Pages/About"
 
-import Account from './Pages/Account';
 
 
 import Home from "./Pages/Home/Home"
@@ -16,6 +15,7 @@ import Checkout from './Pages/Checkout';
 import SingleProduct from './Pages/SingleProduct/SingleProduct';
 import Cart from './Pages/Cart/Cart';
 import Favorites from './Pages/Favorites/Favorites';
+import Account from './Pages/Auth/Account';
 
 
 function App() {
