@@ -22,7 +22,7 @@
 }
 
 .header .nav-links .nav-link {
-  margin-right: 20px;
+  margin-right: 8px;
   position: relative;
   display: block;
   color: var(--dark-colour);
@@ -84,7 +84,7 @@
 }
 .header .icon-links {
   display: flex;
-  column-gap: 20px;
+  column-gap: 10px;
   align-items: center;
 }
 .header .icon-links > a {
@@ -187,7 +187,7 @@
   }
   .nav-links.show {
     opacity: 1;
-    height: 350px;
+    height: 415px;
   }
   .nav-links .nav-link.show {
     opacity: 1;

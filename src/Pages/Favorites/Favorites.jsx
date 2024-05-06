@@ -8,10 +8,9 @@ import Footer from "../../components/Footer";
 function Favorites() {
   const favorites = useSelector((state) => state.favorites);
 
-  return   favorites.length > 0 ? (
+  return favorites.length > 0 ? (
     <div className="page-favorites ">
       <Header></Header>
-
 
       <div className="container pt-[100px] pb-[40px] ">
         <h2
@@ -24,9 +23,7 @@ function Favorites() {
           Favorites
         </h2>
 
-
-
-         <div className=" grid md:grid-cols-3 grid-cols-2   gap-[20px] ">
+        <div className=" grid md:grid-cols-3 grid-cols-2   gap-[20px] ">
           {favorites.map((product) => {
             return <CardFavorite key={product.id} product={product} />;
           })}
@@ -34,11 +31,9 @@ function Favorites() {
       </div>
       <Footer />
     </div>
-  ):
-  (
-    < >
-    
-        <Header schangebackground={"#DDC2AB"}></Header>
+  ) : (
+    <>
+      <Header schangebackground={"#DDC2AB"}></Header>
       <div
         className=" bg-light h-[100vh]  w-[100%] text-[#3333338a] 
          flex justify-center items-center  font-medium md:font-bold 
@@ -46,10 +41,10 @@ function Favorites() {
            absolute left-[50%]  font-2
     translate-x-[-50%] translate-y-[-50%] "
       >
-        Your  Favorites is empty
+        Your Favorites is empty
       </div>
     </>
-  )
+  );
 }
 
 export default Favorites;

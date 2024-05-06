@@ -90,9 +90,10 @@ body {
     transform: translate(-50%,-50%);
   }
   .center-flex {
+    display: flex;
     justify-content: center;
     align-content: center;
-    display: flex;
+
   }
 
   .flex-between {
@@ -128,9 +129,6 @@ body {
   }
   .bg-dark-light {
     background-color:var(--bg-dark-light);
-  }
-  .bg-light {
-    background-color:var(--light-color);
   }
   .bg-second-color-light {
     background-color: var(--second-color-light);

@@ -53,6 +53,7 @@ function Header({ schangebackground }) {
     { linkname: "Shop", to: "/products" },
     { linkname: "About", to: "/about" },
     { linkname: "Contact", to: "/contact" },
+    { linkname: "Offers", to: "/offer" },
   ];
 
   function handleActiveLinke(link) {

@@ -18,7 +18,7 @@
     ],
     "reviews": "1,200",
     "rating": 4.6,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 2,
@@ -39,7 +39,7 @@
     ],
     "reviews": "1,000",
     "rating": 4,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 3,
@@ -60,7 +60,7 @@
     ],
     "reviews": "1,20",
     "rating": 3.8,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 4,
@@ -82,7 +82,7 @@
     ],
     "reviews": "1,200",
     "rating": 4.6,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 5,
@@ -102,7 +102,7 @@
       { "size": "large", "price": "40" }
     ]
     ,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 6,
@@ -123,7 +123,7 @@
     ],
     "reviews": "1,400",
     "rating": 4.9,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 7,
@@ -141,7 +141,7 @@
     "sizes": [{ "size": "small", "price": "100" }],
     "reviews": "1,800",
     "rating": 4.8,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 8,
@@ -162,7 +162,7 @@
     ],
     "reviews": "1,300",
     "rating": 4.6,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 9,
@@ -180,7 +180,7 @@
     "sizes": [{ "size": "medium", "price": "365" }],
     "reviews": "2,200",
     "rating": 4.8,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 10,
@@ -198,7 +198,7 @@
     "sizes": [{ "size": "large", "price": "500" }],
     "reviews": "1,000",
     "rating": 3.8,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 11,
@@ -216,7 +216,7 @@
     "sizes": [{ "size": "large", "price": "500" }],
     "reviews": "1,40",
     "rating": 4.0,
-    "discount": 1
+    "discount": 0
   },
 
   {
@@ -238,7 +238,7 @@
     ],
     "reviews": "1,800",
     "rating": 4,
-    "discount": 1
+    "discount": 0
   },
 
   {
@@ -261,7 +261,7 @@
     ],
     "reviews": "1,200",
     "rating": 4.6,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 14,
@@ -282,7 +282,7 @@
     ],
     "reviews": "1,000",
     "rating": 4,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 15,
@@ -303,7 +303,7 @@
     ],
     "reviews": "1,20",
     "rating": 3.8,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 16,
@@ -321,7 +321,7 @@
     "sizes": [{ "size": "medium", "price": "215" }],
     "reviews": "1,200",
     "rating": 4.6,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 17,
@@ -342,7 +342,7 @@
     ],
     "reviews": "1,200",
     "rating": 4.6,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 18,
@@ -364,7 +364,7 @@
     ],
     "reviews": "1,400",
     "rating": 4.9,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 19,
@@ -386,7 +386,7 @@
     ],
     "reviews": "1,800",
     "rating": 4.8,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 20,
@@ -404,7 +404,7 @@
     "sizes": [{ "size": "medium", "price": "425" }],
     "reviews": "1,300",
     "rating": 4.6,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 21,
@@ -425,7 +425,7 @@
     ],
     "reviews": "2,200",
     "rating": 4.8,
-    "discount": 1
+    "discount": 0
   },
   {
     "id": 22,
@@ -443,6 +443,6 @@
     "sizes": [{ "size": "medium", "price": "455" }],
     "reviews": "1,800",
     "rating": 4,
-    "discount": 1
+    "discount": 0
   }
 ]

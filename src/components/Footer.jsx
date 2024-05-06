@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "../style/footer.css"
 function Footer() {
   return (
-    <div className="   bg-light  overflow-hidden  padding-y-50">
+    <div className=" footer   bg-light  overflow-hidden  padding-y-50">
       <div className="container   grid  grid-cols-1 sm:grid-cols-2 gap-[25px] md:gap-[10px] lg:gap-[30px]  md:grid-cols-4">
         <div>
           <h4 className="  font-bold   md:text-[22px] lg:text-[25px] active-color  uppercase">

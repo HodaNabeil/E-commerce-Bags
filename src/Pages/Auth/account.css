@@ -34,3 +34,19 @@
     left: 0 !important;
   }
 }
+@media (max-width: 576px) {
+  .page-account input::placeholder {
+    font-size: 14px;
+  }
+}
+
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: -10px;
+}
+/* Page Login */
+.login {
+height: 100vh;
+}

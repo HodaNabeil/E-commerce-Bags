@@ -15,7 +15,8 @@ function Cart() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.cart);
   const totalPrice = products.reduce((acc, product) => {
-    acc += product.price * product.quantity - product.discount;
+    
+    acc += (product.price * product.quantity ) - product.discount;
     return acc;
   }, 0);
 
@@ -41,9 +42,9 @@ function Cart() {
 
           <div
             className=" 
-         flex flex-wrap  lg:flex-nowrap gap-x-[30px] "
+         flex flex-wrap  lg:flex-nowrap  justify-between  "
           >
-            <div className=" w-[100%] lg:w-[60%] ">
+            <div className=" w-[100%] lg:w-[66%] ">
               {products.map((product, index) => {
                 return (
                   <div

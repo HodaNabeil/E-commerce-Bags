@@ -3,19 +3,23 @@ import "../src/all.min.css";
 
 
 import {  Route, Routes } from "react-router-dom";
-import About from "./Pages/About"
+
 
 
 
 import Home from "./Pages/Home/Home"
 
-import Shop from './Pages/Shop';
-import Contact from './Pages/Contact';
-import Checkout from './Pages/Checkout';
+
+import Contact from './Pages/Contact/Contact';
+import Checkout from './Pages/Checkout/Checkout';
 import SingleProduct from './Pages/SingleProduct/SingleProduct';
 import Cart from './Pages/Cart/Cart';
 import Favorites from './Pages/Favorites/Favorites';
 import Account from './Pages/Auth/Account';
+import Login from './Pages/Auth/Login';
+import About from './Pages/About/About';
+import Offers from './Pages/Offers/Offers';
+import Shop from './Pages/Shopping/Shop';
 
 
 function App() {
@@ -25,6 +29,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path='/login' element={<Login/>}></Route>
         <Route path="/account" element={<Account />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/favorites" element={<Favorites />} />
@@ -33,7 +38,7 @@ function App() {
         {/* Nested routes for products */}
         <Route path="/products" element={<Shop />}>
         </Route>
-
+        <Route path='/offer' element={<Offers/>} />
         <Route path="/products/:id" element={<SingleProduct />} />
       </Routes>
 
