@@ -1,10 +1,15 @@
 
-import img1  from "../IMg/new-products-sho.png";
-import img2  from "../IMg/newproduct-labtop.png";
-import img3  from "../IMg/new-product.png";
-import img4  from "../IMg/newproduct-sh.png";
 
-import "../style/newproducts.css"
+
+
+
+import img1 from "../../IMg/new-products-sho.png";
+import img2 from "../../IMg/newproduct-labtop.png";
+import img3 from "../../IMg/new-product.png";
+import img4 from "../../IMg/newproduct-sh.png";
+
+
+import "./style/newproducts.css"
 import { Link } from "react-router-dom";
 
 function NewProducts({title}) {

@@ -53,9 +53,9 @@ function ReviewSlider() {
             />
           </div>
           <h3  className=" color-light my-[8px] font-bold font-2 tracking-[1px]">{reviewSlider[currentReviewIndex].name}</h3>
-          <p  className=" text-dark ">{reviewSlider[currentReviewIndex].des}</p>
+          <p  className=" text-sm sm:text-[15px]  md:text-[16px] text-dark ">{reviewSlider[currentReviewIndex].des}</p>
           <button
-            className="btn-slider left  "
+            className="btn-slider left   "
             onClick={prevReview}
           >
             <i className=" icon-slider  fa-solid fa-arrow-left"></i>

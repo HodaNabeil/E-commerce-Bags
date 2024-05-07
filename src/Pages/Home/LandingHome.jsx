@@ -1,10 +1,10 @@
-import Header from "./Header/Header"
+import Header from "../../components/Header/Header"
 
 
 import { useEffect, useState } from "react"
-import "../style/landingHome.css"
 
 
+import "./style/landingHome.css"
 
 function LandingHome() {
   const [currentImg,setCurrentImg]= useState(0)
@@ -65,12 +65,17 @@ function LandingHome() {
       <div className=" absolute element-center-transform">
           <h1 
             className=" active-color text-center font-2 
-            font-bold text-[35px] sm:text-[40px] 
+            font-bold text-[30px] sm:text-[40px] 
             md:text-[50px] mb-[10px] tracking-[2px] ">
               {elmentsSlider[currentImg].title}   
           </h1>
           <p 
-            className=" color-light  text-[20px] md:text-[25px]  text-center">
+            className=" 
+            color-light 
+             text-[14px]
+             sm:text-[18px]
+             md:text-[20px] 
+             text-center">
               {elmentsSlider[currentImg].des}
           </p>
         </div>

@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import "./singleproduct.css";
-import NewProducts from "../../components/NewProducts";
+
 import Footer from "../../components/Footer";
 import {
   addToCart,
   decreaseQuantity,
   increaseQuantity,
 } from "../../Store/ProductSlice/Cart";
+import NewProducts from "../Home/NewProducts";
 
 function SingleProduct() {
   const { id } = useParams();

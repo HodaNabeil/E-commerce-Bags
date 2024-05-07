@@ -134,3 +134,15 @@
   justify-content: center !important;
   align-items: center !important;
 }
+
+
+@media (max-width:567px) {
+  .btn-slider {
+    width: 25px;
+    height: 20px;
+
+  }
+  .btn-slider i {
+    font-size: 12px !important;
+  }
+}

@@ -1,14 +1,15 @@
-import LandingHome from "../../components/LandingHome"
-import Newarrivals from "../../components/Newarrivals"
-import OurCollections from "../../components/OurCollections"
-import NewProducts from "../../components/NewProducts"
-import OfferBags from "../../components/OfferBags"
-import Why from "../../components/Why"
-import Story from "../../components/Story"
-import Footer from "../../components/Footer"
+import LandingHome from "./LandingHome"
+import NewProducts from "./NewProducts"
+import Newarrivals from "./Newarrivals"
+import OfferBags from "./OfferBags"
+import OurCollections from "./OurCollections"
+import Why from "./Why"
 
 
 
+import Story from '../../components/Story';
+
+import Footer from '../../components/Footer';
 
 
 
@@ -21,7 +22,7 @@ function Home() {
         <Newarrivals />
         <NewProducts title="New Arrivals"/>
         <OfferBags/>
-        <Why />
+        <Why/>
         <Story/>
         <Footer />
     </div>

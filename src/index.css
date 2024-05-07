@@ -167,7 +167,9 @@ body {
     padding-left:  25px !important;
     padding-right: 25px !important;
   }
-  
+  .main-btn  {
+    font-size: 15px;
+  }
 }
 @media (max-width:300px) {
   .container {
