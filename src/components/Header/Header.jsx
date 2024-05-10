@@ -51,9 +51,10 @@ function Header({ schangebackground }) {
   const Links = [
     { linkname: "Home", to: "/" },
     { linkname: "Shop", to: "/products" },
-    { linkname: "About", to: "/about" },
-    { linkname: "Contact", to: "/contact" },
     { linkname: "Offers", to: "/offer" },
+    { linkname: "Contact", to: "/contact" },
+    { linkname: "About", to: "/about" },
+  
   ];
 
   function handleActiveLinke(link) {

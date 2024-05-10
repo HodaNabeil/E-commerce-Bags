@@ -10,12 +10,12 @@ import LaptopBagsOffers from "./LaptopBagsOffers"
 import "./offers.css"
 import BackpackOffers from "./BackpackOffers"
 
-import Footer from "../../components/Footer"
+import Footer from "../../components/Footer/Footer"
 
 
 function Offers() {
   return (
-    <div className="page-offers  bg-light" >
+    <div className="page-offers    bg-light" >
             <Header  schangebackground={"#DDC2AB"}/>
         <LandingOffers />
         <TimerOffers/>

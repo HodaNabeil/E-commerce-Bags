@@ -1,33 +1,52 @@
-
-
-import {  useState } from "react";
+import { useState } from "react";
 
 import { useDispatch } from "react-redux";
 import { addToFavorites } from "../../Store/ProductSlice/FavoritesSlice";
 import { addToCart } from "../../Store/ProductSlice/Cart";
-function CardOffer({item}) {
-  
+function CardOffer({ item }) {
   const dispatch = useDispatch();
   const [currentimage, setCurentImage] = useState(0);
 
+  const [popUpMessage, setPopUpMessage] = useState("");
+  const hundleAddToCart = (item) => {
+    dispatch(
+      addToCart({
+        ...item,
+        selectSize: item.sizes[0].size,
+        price: item.sizes[0].price,
+        color: item.colors && item.colors.length > 0 ? item.colors[0] : "",
+        quantity: item.quantity || 1,
+      })
+    );
+    setPopUpMessage(`${item.title} add to Cart`);
+    setTimeout(() => {
+      setPopUpMessage("");
+    }, 300);
+  };
+
   const handleMouseEnter = () => {
     setCurentImage(1);
-};
+  };
 
-const handleMouseLeave = () => {
-  setCurentImage(0);
-};
+  const handleMouseLeave = () => {
+    setCurentImage(0);
+  };
   return (
-    <div className="  card-offer    relative flex justify-center items-center flex-col">
+    <div className="  card-offer 
+       relative flex justify-center items-center flex-col">
+
+  {
+        popUpMessage &&  <div className=" add-to-card">{popUpMessage}</div>
+      }
       <div className=" bg-[#ddc2ab52] rounded-[6px] relative overflow-hidden ">
-        <div  
-        onMouseEnter={handleMouseEnter}
-        
-        onMouseLeave={handleMouseLeave}
-        className=" relative">
+        <div
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className=" relative"
+        >
           <img
             className="w-[110px] h-[110px] sm:w-[150px] sm:h-[150px] 
-                  lg:w-[200px] lg:h-[200px] p-[10px] md:-[15px] lg:p-[20px] object-cover "
+                  lg:w-[200px] lg:h-[200px] p-[10px] md:-[15px] lg:p-[20px]  duration-200 transition-all  object-cover "
             src={item.image[currentimage]}
             alt={item.title}
           />
@@ -50,18 +69,7 @@ const handleMouseLeave = () => {
         <div
           onClick={() => {
             if (item && item.sizes && item.sizes.length > 0) {
-              dispatch(
-                addToCart({
-                  ...item,
-                  selectSize: item.sizes[0].size,
-                  price: item.sizes[0].price,
-                  color:
-                    item.colors && item.colors.length > 0
-                      ? item.colors[0]
-                      : "",
-                  quantity: item.quantity || 1,
-                })
-              );
+              hundleAddToCart(item);
             } else {
               console.error("item sizes are undefined or empty.");
             }
@@ -87,34 +95,30 @@ const handleMouseLeave = () => {
         </h4>
 
         <div
-            className="   icons-wrapper  relative my-[15px] 
+          className="   icons-wrapper  relative my-[15px] 
               color-dark-light flex items-center gap-x-[2px] md:gap-x-[5px]"
-          >
-            <i className="  text-[10px] md:text-[15px] mr-[4px]    fa-solid fa-star"></i>
-            <i className="   text-[10px]  md:text-[15px] mr-[4px]   fa-solid fa-star"></i>
-            <i className="   text-[10px]  md:text-[15px] mr-[4px]   fa-solid fa-star"></i>
-            <i className="   text-[10px]  md:text-[15px] mr-[4px]   fa-solid fa-star"></i>
-            <i className="   text-[10px]  md:text-[15px] mr-[4px]   fa-solid fa-star-half"></i>
-            <small className="text-[10px] md:text-[15px]  text-dark  ml-1">
-              {item.rating}
-            </small>
-          </div>
-
+        >
+          <i className="  text-[10px] md:text-[15px] mr-[4px]    fa-solid fa-star"></i>
+          <i className="   text-[10px]  md:text-[15px] mr-[4px]   fa-solid fa-star"></i>
+          <i className="   text-[10px]  md:text-[15px] mr-[4px]   fa-solid fa-star"></i>
+          <i className="   text-[10px]  md:text-[15px] mr-[4px]   fa-solid fa-star"></i>
+          <i className="   text-[10px]  md:text-[15px] mr-[4px]   fa-solid fa-star-half"></i>
+          <small className="text-[10px] md:text-[15px]  text-dark  ml-1">
+            {item.rating}
+          </small>
+        </div>
 
         <div className="  flex-between  ">
-            <span className="line-through   text-[13px] md:text-[14px] font-medium text-dark">
-                ${item.OldPrice}
+          <span className="line-through   text-[13px] md:text-[14px] font-medium text-dark">
+            ${item.OldPrice}
           </span>
           <span className=" active-color  text-[13px]  md:text-[14px]  font-bold">
             ${item.sizes[0].price}
           </span>
-      
         </div>
       </div>
-
-    
     </div>
   );
 }
 
-export default CardOffer
+export default CardOffer;

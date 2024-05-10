@@ -4,7 +4,7 @@ import Header from "../../components/Header/Header";
 import "./cart.css";
 import { useDispatch, useSelector } from "react-redux";
 
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer/Footer";
 import {
   clearProduct,
   decreaseQuantity,
@@ -41,7 +41,7 @@ function Cart() {
           </div>
 
           <div
-            className=" 
+            className="  left-cart-item
          flex flex-wrap  lg:flex-nowrap  justify-between  "
           >
             <div className=" w-[100%] lg:w-[66%] ">
@@ -123,12 +123,15 @@ function Cart() {
               })}
             </div>
 
-            <div className="  w-[100%] details-cart  lg:w-[30%]  ">
+
+
+
+            <div className="   rigth-cart-item  w-[100%] details-cart  lg:w-[30%]  ">
               <div className="  bg-[#ddc2ab82] p-[15px]  rounded-tr-[6px]  rounded-tl-[6px] ">
-                <h3 className=" text-[18px]  text-dark text-center my-[10px]">
+                <h3 className=" text-[16px] md:text-[18px]  text-dark text-center my-[10px]">
                   Order Summory
                 </h3>
-                <h4 className="  text-[15px]  my-[5px] text-left text-dark ">
+                <h4 className="   text-[15px]  my-[5px] text-left text-dark ">
                   Apply promo Code
                 </h4>
                 <input

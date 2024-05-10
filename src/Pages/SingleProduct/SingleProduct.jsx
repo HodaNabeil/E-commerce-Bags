@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import "./singleproduct.css";
 
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer/Footer";
 import {
   addToCart,
   decreaseQuantity,
@@ -13,7 +13,13 @@ import {
 import NewProducts from "../Home/NewProducts";
 
 function SingleProduct() {
+
+
+
+
+
   const { id } = useParams();
+  const [popUpMessage, setPopUpMessage]=  useState("")
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
   const product = products.find((product) => product.id === +id);
@@ -47,6 +53,9 @@ function SingleProduct() {
     });
     setPrice(size.price);
   };
+
+
+
 
   const handleIncreaseQuantity = () => {
     setNewQuantity((prev) => prev + 1);
@@ -86,6 +95,11 @@ function SingleProduct() {
       })
     );
     setActiveLink(true)
+
+    setPopUpMessage(`${product.title} add to Cart`)
+    setTimeout(()=> {
+      setPopUpMessage("")
+    },1000);
   };
 
   if (!product) {
@@ -95,7 +109,10 @@ function SingleProduct() {
   return (
     <div className="bg-light  page-single-product relative top-[74px] ">
       <Header schangebackground={"#DDC2AB"} />
-
+      
+      {
+        popUpMessage &&  <div className=" add-to-card">{popUpMessage}</div>
+      }
       <div className=" container">
         <div className="  py-[20px]  flex-wrap md:flex-nowrap  flex   gap-[20px]">
           <div className="flex  m-auto md:m-0 gap-[20px]">

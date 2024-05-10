@@ -11,7 +11,6 @@ function LaptopBagsOffers() {
       try {
         const res = await fetch("/offersLap.json");
         const data = await res.json();
-        console.log(data);
         setLapbags(data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -21,7 +20,7 @@ function LaptopBagsOffers() {
   }, []);
 
   return (
-    <div className="container  pb-[30px]">
+    <div className="container overflow-hidden  pb-[30px]">
       <h2
         className=" center-flex p-[30px]  font-2  font-bold
           

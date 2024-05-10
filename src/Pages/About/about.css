@@ -9,6 +9,7 @@
   background-repeat: no-repeat;
   position: relative;
   border-bottom: 3px dashed var(--light-color);
+  background-image: url("../../IMg/about-Medium.webp");
 }
 .hero-about::after {
   content: "";
@@ -21,31 +22,25 @@
   height: 100vh;
 }
 
+@media (min-width:768px) {
+  .hero-about  {
+    background-image: url("../../IMg/about-large.webp");
+  }  
+}
+
+@media (min-width:1200px) {
+  .langing-offers  {
+    background-image: url("../../IMg/about-xl.jpg");
+  }  
+}
+
+
+
+
 .hero-about h2 {
   border-bottom: 3px dashed var(--light-color);
 }
-@media (max-width: 576px) {
-  .hero-about {
-    background-image: url("../../IMg/background_about_small.jpg");
-  }
-}
 
-@media (min-width: 576px) {
-  .hero-about {
-    background-image: url("../../IMg/background_about_Medium.jpg");
-  }
-}
-
-@media (min-width: 992px) {
-  .hero-about {
-    background-image: url("../../IMg/background_about_l.jpg");
-  }
-}
-@media (min-width: 1200px) {
-  .hero-about {
-    background-image: url("../../IMg/background_about_xl.jpg");
-  }
-}
 
 .page-about .container-image-box:nth-child(2) {
   top: 0 !important;
@@ -82,6 +77,12 @@
   align-items: center;
   font-weight: bold;
   color: var(--second-color);
+}
+
+@media (max-width: 768px) {
+  .sales-ratio .ratio {
+    font-weight: 700;
+  }
 }
 .sales-ratio .progress span {
   position: absolute;
@@ -135,12 +136,10 @@
   align-items: center !important;
 }
 
-
-@media (max-width:567px) {
+@media (max-width: 567px) {
   .btn-slider {
     width: 25px;
     height: 20px;
-
   }
   .btn-slider i {
     font-size: 12px !important;

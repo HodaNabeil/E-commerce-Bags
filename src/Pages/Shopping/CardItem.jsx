@@ -2,12 +2,36 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../Store/ProductSlice/Cart";
 import { addToFavorites } from "../../Store/ProductSlice/FavoritesSlice";
+import { useState } from "react";
 
 
 function CardItem({ product }) {
+
+const [popUpMessage, setPopUpMessage]=  useState("")
+  const hundleAddToCart = (product) => {
+    dispatch(
+      addToCart({
+        ...product,
+        selectSize: product.sizes[0].size,
+        price: product.sizes[0].price,
+        color:
+          product.colors && product.colors.length > 0
+            ? product.colors[0]
+            : "",
+        quantity: product.quantity || 1,
+      })
+    )
+    setPopUpMessage(`${product.title} add to Cart`)
+    setTimeout(()=> {
+      setPopUpMessage("")
+    },300);
+  }
   const dispatch = useDispatch();
   return (
-    <div className="  product-item  relative flex justify-center items-center flex-col">
+    <div className="  product-item  relative flex justify-center items-center flex-col"> 
+      {
+        popUpMessage &&  <div className=" add-to-card">{popUpMessage}</div>
+      }
       <div className=" bg-[#ddc2ab52] rounded-[6px] relative overflow-hidden ">
         <div className=" relative">
           <img
@@ -42,18 +66,7 @@ function CardItem({ product }) {
         <div
           onClick={() => {
             if (product && product.sizes && product.sizes.length > 0) {
-              dispatch(
-                addToCart({
-                  ...product,
-                  selectSize: product.sizes[0].size,
-                  price: product.sizes[0].price,
-                  color:
-                    product.colors && product.colors.length > 0
-                      ? product.colors[0]
-                      : "",
-                  quantity: product.quantity || 1,
-                })
-              )
+              hundleAddToCart(product)
             } else {
               console.error("Product sizes are undefined or empty.");
             }

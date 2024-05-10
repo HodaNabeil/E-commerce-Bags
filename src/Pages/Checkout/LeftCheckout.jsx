@@ -80,9 +80,9 @@ function LeftCheckout() {
           <label htmlFor=""> Postcode (optional)</label>
           <input type="text" />
         </div>
-        <div className=" flex  items-center gap-x-[10px]" >
-          <input  type="checkbox" name="" id="nbtbox" />
-          <h4  className=" text-dark "> Subscribe to our newsletter</h4>
+        <div className=" flex  box-checkbox  items-center gap-x-[10px]" >
+          <input  type="checkbox" name="" id="news" />
+          <label  htmlFor="news" className=" text-dark "> Subscribe to our newsletter</label>
         </div>
 
         <div >

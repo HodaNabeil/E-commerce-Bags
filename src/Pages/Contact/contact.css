@@ -81,3 +81,11 @@
 .main-btn::after {
   border-radius: 4px;
 }
+
+
+
+@media (max-width:768px) {
+  .contact-page .container-form div label {
+    font-size: 15px !important;
+  }
+}

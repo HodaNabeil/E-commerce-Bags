@@ -3,8 +3,7 @@ import Header from "../../components/Header/Header";
 
 import "./favorites.css";
 import CardFavorite from "./CardFavorite";
-import Footer from "../../components/Footer";
-
+import Footer from "../../components/Footer/Footer";
 function Favorites() {
   const favorites = useSelector((state) => state.favorites);
 

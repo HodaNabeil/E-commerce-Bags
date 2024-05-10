@@ -16,7 +16,7 @@ function Why() {
             Free Shipping
           </h4>
         </div>
-        <div className=" element-center-flex  flex-col p-[20px]  duration-500 transition-all rounded-[10px]  hover:shadow-3xl  ">
+        <div className=" element-center-flex  flex-col p-[10px] md:p-[20px] duration-500 transition-all rounded-[10px]  hover:shadow-3xl  ">
           <img
             className="  w-[50px] h-[50px] sm:w-[55px] sm:h-[55px] md:w-[60px] md:h-[60px]  
             object-cover  mb-[10px]   "
@@ -27,7 +27,7 @@ function Why() {
             FGenuine product
           </h4>
         </div>
-        <div className=" element-center-flex  flex-col p-[20px]  duration-500 transition-all rounded-[10px]  hover:shadow-3xl  ">
+        <div className=" element-center-flex  flex-col p-[10px] md:p-[20px]  duration-500 transition-all rounded-[10px]  hover:shadow-3xl  ">
           <img
             className="  w-[50px] h-[50px] sm:w-[55px] sm:h-[55px] md:w-[60px] md:h-[60px]  
             object-cover  mb-[10px]   "
@@ -36,7 +36,7 @@ function Why() {
           />
           <h4 className=" leading-[1.7] text-sm  text-dark ">secure payment</h4>
         </div>
-        <div className=" element-center-flex  flex-col p-[20px]  duration-500 transition-all rounded-[10px]  hover:shadow-3xl  ">
+        <div className=" element-center-flex  flex-col p-[10px] md:p-[20px]   duration-500 transition-all rounded-[10px]  hover:shadow-3xl  ">
           <img
             className="  w-[50px] h-[50px] sm:w-[55px] sm:h-[55px] md:w-[60px] md:h-[60px]  
             object-cover  mb-[10px]   "

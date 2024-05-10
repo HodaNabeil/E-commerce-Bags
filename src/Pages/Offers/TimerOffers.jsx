@@ -33,7 +33,8 @@ function TimerOffers() {
 
   return (
     <div className="conteiner p-[50px] bg-main-color ">
-      <div className=" container-offer flex justify-center items-center flex-col bg-light p-[30px] rounded-[15px]   ">
+      <div className=" container-offer flex justify-center items-center flex-col bg-light 
+      p-[10px]  sm:p-[20px] md:p-[30px] rounded-[15px]   ">
         <h3 className=" my-[20px] font-bold 
            text-[16px] sm:text-[20px]  md:text-[25px]  active-color    tracking-[2px] font-2">
           Limited-Time Timer Offer

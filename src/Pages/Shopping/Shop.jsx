@@ -9,7 +9,8 @@ import "./shoppingpage.css";
 import SortFilter from "./SortFilter";
 import Pagination from "./Pagination";
 
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer/Footer";
+import Loading from "../../components/Loading/Loading";
 
 
 function Shop() {
@@ -32,9 +33,6 @@ function Shop() {
 
   const [mobileFilterItem, setMobileFilterItem] = useState(false);
 
-  // useEffect(() => {
-  //   dispatch(fetchProducts());
-  // }, [dispatch]);
 
 
   useEffect(() => {
@@ -109,11 +107,11 @@ function Shop() {
   }, [category, color, products, size, prand, minPrice, maxPrice, sortItem]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><Loading/></div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className=" text-red-700 text-[40px]  ">Error: {error}</div>;
   }
 
   const product_per_page = 6;

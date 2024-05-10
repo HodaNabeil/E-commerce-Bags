@@ -1,6 +1,6 @@
 import Header from "../../components/Header/Header";
 
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer/Footer";
 import "./contact.css";
 function Contact() {
   return (
@@ -10,7 +10,7 @@ function Contact() {
       <div className=" g-light ">
         <div
           className=" container relative
-             flex    flex-wrap md:flex-nowrap justify-between items-center gap-[30px]
+             flex   flex-wrap-reverse   md:flex-nowrap justify-between items-center gap-[30px]
              pt-[100px] 
         "
         >

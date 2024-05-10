@@ -7,9 +7,9 @@ import Why from "./Why"
 
 
 
-import Story from '../../components/Story';
+import Story from '../../components/Story/Story';
 
-import Footer from '../../components/Footer';
+import Footer from '../../components/Footer/Footer';
 
 
 
@@ -17,6 +17,7 @@ import Footer from '../../components/Footer';
 function Home() {
   return (
     <div>
+      
       <LandingHome/>
         <OurCollections/>
         <Newarrivals />

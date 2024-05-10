@@ -12,24 +12,24 @@
   background-position: center;
   background-repeat: no-repeat;
   object-fit: cover;
+  overflow: hidden;
 }
 
 
 
-
-
-@media (min-width:991px) {
+@media (min-width:768px) {
   .langing-offers  {
     background-image: url("../../IMg/landing_offfers_large.jpg");
   }  
 }
-
 
 @media (min-width:1200px) {
   .langing-offers  {
     background-image: url("../../IMg/langing_offers_xl.jpg");
   }  
 }
+
+
 .langing-offers::after {
   content: "";
   position: absolute;
@@ -41,6 +41,14 @@
   z-index: 2;
 }
 
+@media (max-width:420px) {
+  .langing-offers  {
+    height: 90vh;
+  }  
+  .langing-offers::after {
+    height: 90vh;
+  }
+}
 .langing-offers h2 {
   position: absolute;
   top: 33%;

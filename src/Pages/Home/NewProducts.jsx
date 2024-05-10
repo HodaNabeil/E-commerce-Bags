@@ -65,7 +65,7 @@ function NewProducts({title}) {
       
           <Link 
             className="bg-second-color     main-btn element-center-flex  m-auto "
-            to="shop"> <span >View All</span></Link>
+            to="/products"> <span >View All</span></Link>
       </div>
     </div>
   )

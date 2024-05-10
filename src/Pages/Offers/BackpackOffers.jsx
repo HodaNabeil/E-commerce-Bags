@@ -12,7 +12,6 @@ function BackpackOffers() {
       try {
         const res = await fetch("/BackpackOffers.json");
         const data = await res.json();
-        console.log(data);
         setBackpack(data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -22,7 +21,7 @@ function BackpackOffers() {
   }, []);
 
   return (
-    <div className="container  pb-[30px]">
+    <div className="container  overflow-hidden pb-[30px]">
       <h2
         className=" center-flex p-[30px]  font-2  font-bold
           

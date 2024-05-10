@@ -24,17 +24,17 @@
   border: 1px solid var(--light-color);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .imge {
     right: 0 !important;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .imge {
     left: 0 !important;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 575px) {
   .page-account input::placeholder {
     font-size: 14px;
   }
