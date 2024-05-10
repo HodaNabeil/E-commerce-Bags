@@ -32,12 +32,10 @@ function CardOffer({ item }) {
     setCurentImage(0);
   };
   return (
-    <div className="  card-offer 
-       relative flex justify-center items-center flex-col">
-
-  {
-        popUpMessage &&  <div className=" add-to-card">{popUpMessage}</div>
-      }
+    <div
+      className="  card-offer 
+       relative flex justify-center items-center flex-col"
+    >
       <div className=" bg-[#ddc2ab52] rounded-[6px] relative overflow-hidden ">
         <div
           onMouseEnter={handleMouseEnter}

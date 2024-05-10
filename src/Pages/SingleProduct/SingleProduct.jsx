@@ -13,13 +13,8 @@ import {
 import NewProducts from "../Home/NewProducts";
 
 function SingleProduct() {
-
-
-
-
-
   const { id } = useParams();
-  const [popUpMessage, setPopUpMessage]=  useState("")
+  const [popUpMessage, setPopUpMessage] = useState("");
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
   const product = products.find((product) => product.id === +id);
@@ -30,7 +25,7 @@ function SingleProduct() {
   const [price, setPrice] = useState(null);
   const [newQuantity, setNewQuantity] = useState(1);
 
-  const [activeLink,setActiveLink] = useState(false)
+  const [activeLink, setActiveLink] = useState(false);
 
   useEffect(() => {
     if (product) {
@@ -53,9 +48,6 @@ function SingleProduct() {
     });
     setPrice(size.price);
   };
-
-
-
 
   const handleIncreaseQuantity = () => {
     setNewQuantity((prev) => prev + 1);
@@ -94,12 +86,12 @@ function SingleProduct() {
         quantity: newQuantity,
       })
     );
-    setActiveLink(true)
+    setActiveLink(true);
 
-    setPopUpMessage(`${product.title} add to Cart`)
-    setTimeout(()=> {
-      setPopUpMessage("")
-    },1000);
+    setPopUpMessage(`${product.title} add to Cart`);
+    setTimeout(() => {
+      setPopUpMessage("");
+    }, 1000);
   };
 
   if (!product) {
@@ -109,10 +101,7 @@ function SingleProduct() {
   return (
     <div className="bg-light  page-single-product relative top-[74px] ">
       <Header schangebackground={"#DDC2AB"} />
-      
-      {
-        popUpMessage &&  <div className=" add-to-card">{popUpMessage}</div>
-      }
+
       <div className=" container">
         <div className="  py-[20px]  flex-wrap md:flex-nowrap  flex   gap-[20px]">
           <div className="flex  m-auto md:m-0 gap-[20px]">
@@ -233,7 +222,7 @@ function SingleProduct() {
                 className={`flex gap-[15px] justify-center items-center 
                 border text-dark   border-[#D39C80] py-[8px] px-[20px] rounded-[6px]
                 
-                ${activeLink &&  "bg-[#db794a]  border-[#db794a] text-[#f8f2EE]"}
+                ${activeLink && "bg-[#db794a]  border-[#db794a] text-[#f8f2EE]"}
                 ${
                   price > 0 && selectColor !== ""
                     ? " cursor-pointer"
@@ -242,7 +231,7 @@ function SingleProduct() {
                 `}
               >
                 <i className=" fa-solid fa-basket-shopping"></i>
-              
+
                 <span
                   className={`
                   capitalize 

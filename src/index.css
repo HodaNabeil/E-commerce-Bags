@@ -214,7 +214,7 @@ h5 {
   text-transform: capitalize;
 }
 /* Aleart add to Cart */
-.add-to-card {
+/* .add-to-card {
   position: absolute;
   top: 20%;
   left: 0%;
@@ -241,6 +241,6 @@ h5 {
   box-shadow: 0 0 4px 3px  var(--light-color) ;
   overflow: hidden;
 }
-
+ */
 
 /* End Aleart add to Cart */

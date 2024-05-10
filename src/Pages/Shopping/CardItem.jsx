@@ -29,9 +29,7 @@ const [popUpMessage, setPopUpMessage]=  useState("")
   const dispatch = useDispatch();
   return (
     <div className="  product-item  relative flex justify-center items-center flex-col"> 
-      {
-        popUpMessage &&  <div className=" add-to-card">{popUpMessage}</div>
-      }
+  
       <div className=" bg-[#ddc2ab52] rounded-[6px] relative overflow-hidden ">
         <div className=" relative">
           <img
