@@ -127,7 +127,7 @@ function Register() {
       "
         >
           <img
-            className=" object-cover w-[100%] h-[100%]"
+            className=" object-cover hidden sm:w-[100%] h-[100%]"
             src={require(`../../IMg/story_right.jpg`)}
             alt="img"
           />

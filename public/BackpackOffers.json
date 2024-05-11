@@ -4,8 +4,8 @@
     "title": "Backpack",
     "category": "Backpack",
     "image": [
-      "/IMg/newproduct-sh.png",
-      "/IMg/newproduct_3.png"
+      "/Img/new-products-sho.png",
+      "/Img/collection_1.png"
 
     ],
     "quantity": 1,
@@ -25,8 +25,8 @@
     "title": "Backpack",
     "category": "Backpack",
     "image": [
-      "/IMg/newproduct_3.png",
-      "/IMg/new-products-sho.png"
+      "/Img/newproduct_3.png",
+      "/Img/new-products-sho.png"
 
     ],
     "quantity": 1,
@@ -45,8 +45,8 @@
     "title": "backbag",
     "category": "backbag",
     "image": [
-      "/IMg/new-products-sho.png",
-      "/IMg/new-product.png"
+      "/Img/new-products-sho.png",
+      "/Img/new-product.png"
 
     ],
     "quantity": 1,
@@ -66,8 +66,8 @@
     "category": "Backpack",
     "quantity": 1,
     "image": [
-      "/IMg/new-product.png",
-      "/IMg/newproduct-sh.png"
+      "/Img/new-product.png",
+      "/Img/newproduct-sh.png"
     ],
     "colors": ["white", "black"],
     "prand": ["adidas", "cuyana"],

@@ -171,7 +171,7 @@
 /* Filter Price */
 .slider-price {
   background-color: #c6b9b1;
-  border-radius: 10px;
+  border-radius: 10px;                        
   width: 100%;
   height: 3px;
 }
@@ -260,6 +260,10 @@
 
 /* Midea */
 @media (max-width: 576px) {
+.icon-cart{
+  font-size: 10px  !important;
+}
+
   .shopping-page .overlay-filter {
     position: absolute;
     width: 100%;
@@ -355,7 +359,7 @@
   }
 }
 
-
+/* 
 @media (max-width:300px) {
   .product-item  img {
     width: 80px;
@@ -391,4 +395,4 @@
 
 
 
-}
+} */

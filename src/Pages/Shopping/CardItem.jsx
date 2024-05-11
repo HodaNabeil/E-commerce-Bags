@@ -71,7 +71,7 @@ const [popUpMessage, setPopUpMessage]=  useState("")
           }}
           className="  add-cart  cursor-pointer bg-second-color  text-[12px]  sm:text-[15px] 
            absolute  w-[100%] bottom-[-100%]  text-center  hover:bg-[#dd8b61]  
-          duration-300 transition-all  p-0 sm:px-[10px] py-[8px] sm:py-[10px]  
+          duration-300 transition-all  p-[5px] sm:px-[10px] py-[8px] sm:py-[10px]  
           lg:px-[10px] lg:py-[10px]
           color-light  rounded-b-[6px]"
         >
