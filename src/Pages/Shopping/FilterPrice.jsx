@@ -11,7 +11,6 @@ function FilterPrice({ minPrice, setMinPrice, setMaxPrice, maxPrice }) {
     setMinPrice(newValues[0]);
     setMaxPrice(newValues[1]);
   };
-
   return (
     <div style={{ position: "relative" }}>
       <div
