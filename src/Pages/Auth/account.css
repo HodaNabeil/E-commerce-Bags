@@ -25,21 +25,33 @@
 }
 
 @media (min-width: 767px) {
-  .imge {
+  .page-account .imge {
     right: 0 !important;
   }
 }
 @media (max-width: 767px) {
-  .imge {
+  .page-account   .imge {
     left: 0 !important;
   }
+
 }
-@media (max-width: 575px) {
+
+
+@media (max-width: 576px) {
   .page-account input::placeholder {
     font-size: 14px;
   }
+
 }
 
+@media (max-width: 576px) {
+
+  .page-account   .imge  {
+    display:  none !important;
+    height:  0 !important;
+  }
+
+}
 
 .error {
   color: red;
@@ -50,3 +62,4 @@
 .login {
 height: 100vh;
 }
+

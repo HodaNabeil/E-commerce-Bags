@@ -16,8 +16,8 @@ function Login() {
 
       <div className="container relative  pt-[200px]">
         <form
-          className="  bg-second-color p-[40px] 
-          w-[400px]  element-center-flex   flex-col  m-auto "
+          className="  bg-second-color sm:p-[40px] 
+         w-[80%]  p-[20px]  sm:w-[400px]  element-center-flex   flex-col  m-auto "
         >
           <input
             className=" mb-[10px]   md:mb-[15px] py-[8px] md:py-[10px] px-[14px]  bg-transparent 
