@@ -113,14 +113,52 @@ transition: 0.2s all ease;
   --ms-transition: 0.2s all ease;
 }
 .element-add-to-card:hover.element-add-to-card  i {
-transform: rotate(-300deg);
---webkit-transform:rotate(-300deg);
---ms-transform:rotate(-300deg);
---o-transform:rotate(-300deg);
---moz-transform:rotate(-300deg);
+transform: rotate(360deg);
+--webkit-transform:rotate(360deg);
+--ms-transform:rotate(360deg);
+--o-transform:rotate(360deg);
+--moz-transform:rotate(360deg);
 }
 .card-offer:hover .element-add-to-card {
 display: block;
 bottom: 0 !important;
 }
 
+.page-offers .spinner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 25%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  border: 2px solid  #f8f2ee8c;
+  border-left: transparent 2px solid;
+  animation: spinner 1.5s linear infinite;
+
+  --transition: 0.4s all ease;
+  --o-transform: translate(-50%, -50%);
+  --webkite-transform: translate(-50%, -50%);
+  --moz-transform: translate(-50%, -50%);
+  --ms-transform: translate(-50%, -50%);
+  --webkite-animation: spinner 1.5s linear infinite;
+  --o-animation: spinner 1.5s linear infinite;
+  --webkite-animation: spinner 1.5s linear infinite;
+  --moz-animation: spinner 1.5s linear infinite;
+  --ms-animation: spinner 1.5s linear infinite;
+}@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width:566px) {
+  .page-offers .spinner  {
+    width: 14px;
+    height: 14px;
+  }
+}

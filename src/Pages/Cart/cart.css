@@ -51,9 +51,9 @@
 }
 @media (max-width: 400px) {
   .cart-item p,
-  h5,
-  i,
-  button {
+  .cart-item  h5,
+  .cart-item   i,
+  .cart-item   button {
     font-size: 14px !important;
   }
   .rigth-cart-item h3 {

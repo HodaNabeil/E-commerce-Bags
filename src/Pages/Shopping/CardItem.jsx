@@ -4,10 +4,8 @@ import { addToCart } from "../../Store/ProductSlice/Cart";
 import { addToFavorites } from "../../Store/ProductSlice/FavoritesSlice";
 import { useState } from "react";
 
-
 function CardItem({ product }) {
-
-const [popUpMessage, setPopUpMessage]=  useState("")
+  const [Loading, setLoading] = useState(false);
   const hundleAddToCart = (product) => {
     dispatch(
       addToCart({
@@ -15,21 +13,20 @@ const [popUpMessage, setPopUpMessage]=  useState("")
         selectSize: product.sizes[0].size,
         price: product.sizes[0].price,
         color:
-          product.colors && product.colors.length > 0
-            ? product.colors[0]
-            : "",
+          product.colors && product.colors.length > 0 ? product.colors[0] : "",
         quantity: product.quantity || 1,
       })
-    )
-    setPopUpMessage(`${product.title} add to Cart`)
-    setTimeout(()=> {
-      setPopUpMessage("")
-    },300);
-  }
+    );
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  };
+
   const dispatch = useDispatch();
+
   return (
-    <div className="  product-item  relative flex justify-center items-center flex-col"> 
-  
+    <div className="  product-item  relative flex justify-center items-center flex-col">
       <div className=" bg-[#ddc2ab52] rounded-[6px] relative overflow-hidden ">
         <div className=" relative">
           <img
@@ -42,7 +39,8 @@ const [popUpMessage, setPopUpMessage]=  useState("")
             className="  container-box-icon hidden flex-col absolute  top-[33%]   
             translate-y-[-50%] right-[10px] "
           >
-            <span  onClick={()=>dispatch(addToFavorites(product))}
+            <span
+              onClick={() => dispatch(addToFavorites(product))}
               className="  box-icon  duration-500 transition-all  
               relative  w-[25px] h-[25px]   sm:w-[35px] sm:h-[35px] 
               lg:w-[40px] lg:h-[40px] element-center-flex  rounded-[50px] color-light 
@@ -64,19 +62,33 @@ const [popUpMessage, setPopUpMessage]=  useState("")
         <div
           onClick={() => {
             if (product && product.sizes && product.sizes.length > 0) {
-              hundleAddToCart(product)
+              hundleAddToCart(product);
             } else {
               console.error("Product sizes are undefined or empty.");
             }
           }}
-          className="  add-cart  cursor-pointer bg-second-color  text-[12px]  sm:text-[15px] 
-           absolute  w-[100%] bottom-[-100%]  text-center  hover:bg-[#dd8b61]  
-          duration-300 transition-all  p-[5px] sm:px-[10px] py-[8px] sm:py-[10px]  
-          lg:px-[10px] lg:py-[10px]
-          color-light  rounded-b-[6px]"
+          className={`  add-cart  cursor-pointer bg-second-color  text-[12px]  sm:text-[15px] 
+          absolute  w-[100%] bottom-[-100%]  text-center  hover:bg-[#dd8b61]  
+         duration-300 transition-all     
+         color-light  rounded-b-[6px] 
+    
+                  ${
+                    Loading === false
+                      ? " h-[28px] sm:h-[35px] md:h-[42px] flex justify-center items-center "
+                      : "h-[28px]  sm:h-[35px] md:h-[42px] flex justify-center items-center"
+                  }
+         `}
         >
-          <i className="  icon-cart   mr-[5px] fa-solid fa-plus"></i>
-          Add to Cart
+          {Loading === false ? (
+            <>
+              <i className="  icon-cart   mr-[5px] fa-solid fa-plus"></i>
+              Add to Cart
+            </>
+          ) : (
+            <p className="spinner">
+              
+            </p>
+          )}
         </div>
       </div>
 

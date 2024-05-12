@@ -213,34 +213,3 @@ h3,
 h5 {
   text-transform: capitalize;
 }
-/* Aleart add to Cart */
-/* .add-to-card {
-  position: absolute;
-  top: 20%;
-  left: 0%;
-  width: 100%;
-  font-size: 14px;
-  padding: 10px;
-  font-weight: 300;
-  background-color: #db794a;
-  border-radius: 50px;
-  color: var(--light-color);
-  z-index: 50000000;
-  text-transform: capitalize;
-  box-shadow: 0 0 4px 3px  var(--light-color) ;
-}
-.page-single-product .add-to-card {
-  width: 50%;
-  top: 10%;
-  left: 50%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translate(-50%,-50%);
-  box-shadow: 0 0 4px 3px  var(--light-color) ;
-  overflow: hidden;
-}
- */
-
-/* End Aleart add to Cart */

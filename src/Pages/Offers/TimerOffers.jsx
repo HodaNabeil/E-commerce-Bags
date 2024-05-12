@@ -32,7 +32,7 @@ function TimerOffers() {
   }
 
   return (
-    <div className="conteiner p-[50px] bg-main-color ">
+    <div className="conteiner  overflow-hidden p-[50px] bg-main-color ">
       <div className=" container-offer flex justify-center items-center flex-col bg-light 
       p-[10px]  sm:p-[20px] md:p-[30px] rounded-[15px]   ">
         <h3 className=" my-[20px] font-bold 

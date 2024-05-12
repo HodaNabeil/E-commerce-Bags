@@ -1,7 +1,8 @@
-.page-favorites .header .menu-icon  span {
+.page-favorites .header .menu-icon span {
   background-color: var(--light-color) !important;
 }
-.page-favorites .product-item  h4 ,.page-favorites .product-item span {
+.page-favorites .product-item h4,
+.page-favorites .product-item span {
   --transition: 0.4s all ease;
   --o-transition: 0.4s all ease;
   --webkite-transition: 0.4s all ease;
@@ -9,11 +10,11 @@
   --ms-transition: 0.4s all ease;
 }
 
-.page-favorites .product-item  .add-cart:hover h4 {
-  color: var(--light-color)!important;
-}
-
-.page-favorites .product-item  .add-cart:hover span {
+.page-favorites .product-item .add-cart:hover h4 {
   color: var(--light-color) !important;
-
 }
+
+.page-favorites .product-item .add-cart:hover span {
+  color: var(--light-color) !important;
+}
+

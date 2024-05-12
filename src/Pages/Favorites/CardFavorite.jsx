@@ -23,7 +23,7 @@ function CardFavorite({ product }) {
               className="  box-icon  duration-500 transition-all  
                 relative  w-[25px] h-[25px]   sm:w-[35px] sm:h-[35px] 
                 lg:w-[40px] lg:h-[40px] element-center-flex  rounded-[50px] color-light 
-                cursor-pointer   bg-second-color mb-[10px]"
+                cursor-pointer   bg-second-color "
             >
               <i className="  z-[2]  text-[12px] sm:text-[16px]  fa-solid fa-trash"></i>
             </span>
@@ -59,7 +59,7 @@ function CardFavorite({ product }) {
         <div
           className="  add-cart  flex-between  cursor-pointer bg-second-color  text-[12px]  sm:text-[15px] 
           absolute  w-[100%] bottom-[-100%]  text-center  hover:bg-[#dd8b61]  
-          duration-300 transition-all p-[8px]   
+          duration-300 transition-all py-[4px] px-[6px] sm:p-[8px]   
           md:p-[10px]
           color-light  rounded-b-[6px]"
         >

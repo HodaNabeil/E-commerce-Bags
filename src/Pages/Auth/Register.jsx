@@ -45,7 +45,7 @@ function Register() {
           w-[90%] m-auto p-[30px] relative  bg-second-color 
        flex-between "
       >
-        <div className="  mb-[800px] md:mb-0 relative w-[100%] md:w-[50%]">
+        <div className="  sm:mb-[800px]  md:mb-0 relative w-[100%] md:w-[50%]">
           <h6 className=" font-2 text-dark  mb-[60px]"> Luxury Line</h6>
 
           <div className=" text-dark ">
@@ -127,7 +127,7 @@ function Register() {
       "
         >
           <img
-            className=" object-cover hidden sm:w-[100%] h-[100%]"
+            className=" object-cover hidden sm:block sm:w-[100%] h-[100%]"
             src={require(`../../IMg/story_right.jpg`)}
             alt="img"
           />

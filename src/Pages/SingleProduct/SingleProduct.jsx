@@ -14,7 +14,7 @@ import NewProducts from "../Home/NewProducts";
 
 function SingleProduct() {
   const { id } = useParams();
-  const [popUpMessage, setPopUpMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
   const product = products.find((product) => product.id === +id);
@@ -88,9 +88,9 @@ function SingleProduct() {
     );
     setActiveLink(true);
 
-    setPopUpMessage(`${product.title} add to Cart`);
+    setLoading(true);
     setTimeout(() => {
-      setPopUpMessage("");
+      setLoading(false);
     }, 1000);
   };
 
@@ -200,9 +200,9 @@ function SingleProduct() {
               </div>
             </div>
 
-            <div className=" flex items-center  gap-[20px] my-[15px] ">
+            <div className="  container-btn-add-to-cart flex items-center gap-[10px]  sm:gap-[15px] md:gap-[20px] my-[15px] ">
               <div
-                className=" flex  cursor-pointer justify-center items-center  
+                className="  btn-quantity flex  cursor-pointer justify-center items-center  
               gap-[10px] border border-[#D39C80] py-[6px] px-[20px] 
               rounded-[6px] capitalize text-dark  "
               >
@@ -219,8 +219,10 @@ function SingleProduct() {
 
               <div
                 onClick={handleAddToCart}
-                className={`flex gap-[15px] justify-center items-center 
-                border text-dark   border-[#D39C80] py-[8px] px-[20px] rounded-[6px]
+                className={` btn-add-to-cart  relative flex 
+                gap-[5px] sm:gap-[15px] justify-center items-center 
+                border text-dark   border-[#D39C80]  rounded-[6px]
+                ${loading === false ? "  py-[8px] px-[20px] h-[40px] w-[120px] sm:w-[150px] md:w-[170px]" : " py-[8px] px-[20px] h-[40px] w-[120px] sm:w-[150px] md:w-[170px] "}
                 
                 ${activeLink && "bg-[#db794a]  border-[#db794a] text-[#f8f2EE]"}
                 ${
@@ -230,17 +232,25 @@ function SingleProduct() {
                 }
                 `}
               >
-                <i className=" fa-solid fa-basket-shopping"></i>
+                {loading === false ? 
+                (
+                  <>
+                    <i className="   text-[10px]  sm:text-sm md:text-[15px]  fa-solid fa-basket-shopping"></i>
 
-                <span
-                  className={`
-                  capitalize 
-                  text-sm  sm:text-[16px]
-              
-                  `}
-                >
-                  Add To Cart
-                </span>
+                    <span
+                      className={`
+                      capitalize 
+                      text-[10px]  sm:text-[13px] md:text-[16px]
+
+                      `}
+                    >
+                      Add To Cart
+                    </span>
+                  </>
+                ) :
+                 (
+                  <p className="spinner"></p>
+                )}
               </div>
             </div>
 

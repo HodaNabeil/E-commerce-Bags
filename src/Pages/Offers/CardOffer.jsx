@@ -7,7 +7,7 @@ function CardOffer({ item }) {
   const dispatch = useDispatch();
   const [currentimage, setCurentImage] = useState(0);
 
-  const [popUpMessage, setPopUpMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const hundleAddToCart = (item) => {
     dispatch(
       addToCart({
@@ -18,10 +18,10 @@ function CardOffer({ item }) {
         quantity: item.quantity || 1,
       })
     );
-    setPopUpMessage(`${item.title} add to Cart`);
+    setLoading(true);
     setTimeout(() => {
-      setPopUpMessage("");
-    }, 300);
+      setLoading(false);
+    }, 1000);
   };
 
   const handleMouseEnter = () => {
@@ -72,15 +72,28 @@ function CardOffer({ item }) {
               console.error("item sizes are undefined or empty.");
             }
           }}
-          className="  element-add-to-card  cursor-pointer bg-second-color 
-           text-[12px]  sm:text-[15px] 
-               absolute  w-[100%]  bottom-[-100%]  text-center  hover:bg-[#dd8b61]  
-              duration-300 transition-all  p-0 sm:px-[10px] py-[8px] sm:py-[10px]  
-              lg:px-[10px] lg:py-[10px]
-              color-light  rounded-b-[6px]  "
+          className={`element-add-to-card  cursor-pointer bg-second-color 
+          text-[12px]  sm:text-[15px] 
+              absolute  w-[100%]  bottom-[-100%]  text-center  hover:bg-[#dd8b61]  
+             duration-300 transition-all  p-0 sm:px-[10px] py-[8px] sm:py-[10px]  
+             lg:px-[10px] lg:py-[10px]
+             color-light  rounded-b-[6px]
+             ${
+               loading === false
+                 ? " h-[28px] sm:h-[35px] md:h-[42px] flex justify-center items-center "
+                 : "h-[28px]  sm:h-[35px] md:h-[42px] flex justify-center items-center"
+             }
+             
+             `}
         >
-          <i className="  mr-[5px] fa-solid fa-plus"></i>
-          Add to Cart
+          {loading === false ? (
+            <>
+              <i className="    mr-[5px] fa-solid fa-plus"></i>
+              Add to Cart
+            </>
+          ) : (
+            <p className="spinner"></p>
+          )}
         </div>
       </div>
 

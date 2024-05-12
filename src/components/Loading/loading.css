@@ -4,7 +4,7 @@
   background-color: #f9f8f8;
   position: relative;
 }
-.spinner {
+.loading .spinner {
   width: 100px;
   height: 100px;
   border-radius: 50%;

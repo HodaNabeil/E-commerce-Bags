@@ -15,7 +15,7 @@ import Footer from "../../components/Footer/Footer"
 
 function Offers() {
   return (
-    <div className="page-offers    bg-light" >
+    <div className="page-offers overflow-hidden   bg-light" >
             <Header  schangebackground={"#DDC2AB"}/>
         <LandingOffers />
         <TimerOffers/>
